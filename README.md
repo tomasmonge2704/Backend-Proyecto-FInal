@@ -8,6 +8,9 @@ comando para iniciar el servidor
 ## Project structure
 
 ``` 
+├── # routes
+│    └── #carritos.js
+│    └── #productos.js
 ├── # carrito.json
 ├── # Productos.json
 │   
