@@ -15,6 +15,7 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "pug.js",
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack ./a1.js ./a2.js ./a3.js --mode=production",

@@ -12,6 +12,7 @@ class ContenedorArchivo{
     }
     async listarAll(){
         try {
+            console.log(this.ruta)
             const elems = await fs.readFile(this.ruta, 'utf-8')
             return JSON.parse(elems)
         } catch (error){
