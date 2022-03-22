@@ -7,16 +7,15 @@ class ContenedorArchivo{
     }
     async listar(id) {
         const elems = await this.listarAll()
-        const buscado = elems.find( e.id == id)
+        const buscado = elems.find((e)=> e.id == id)
         return buscado
     }
     async listarAll(){
         try {
-            console.log(this.ruta)
             const elems = await fs.readFile(this.ruta, 'utf-8')
             return JSON.parse(elems)
         } catch (error){
-            return []
+            return  console.log("error", error);
         }
     }
 
@@ -32,7 +31,7 @@ class ContenedorArchivo{
         elems.push(newElem)
         try {
             await fs.writeFile(this.ruta, JSON.stringify(elems, null, 2))
-            return newId
+            return newElem
         } catch (error){
             throw new Error(`Error al guardar: ${error}`)
         }
@@ -46,6 +45,7 @@ class ContenedorArchivo{
             elems[index] = elem
             try{
                 await fs.writeFile(this.ruta, JSON.stringify(elems, null, 2))
+                return elem
             } catch (error){
                 throw new Error (`Error al borrar: ${error}`)
             }
@@ -60,6 +60,7 @@ class ContenedorArchivo{
         elems.splice(index, 1)
         try{
             await fs.writeFile(this.ruta, JSON.stringify(elems, null,2))
+            return index
         } catch (error){
             throw new Error(`Error al borrar: ${error}`)
         }

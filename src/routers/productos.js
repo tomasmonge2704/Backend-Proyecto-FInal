@@ -4,53 +4,63 @@ import productosApiMongo from "../daos/productos/ProductosDaoMongoDb.js";
 import config from "../config.js";
 import mongoose from "mongoose";
 
-const productos = config.DB ==="mongo" ? productosApiMongo : productosApiArchivo
+const productos =
+  config.DB === "mongo" ? productosApiMongo : productosApiArchivo;
 
-if(config.DB === "mongo"){
-    async function CRUD(){
-        try{
-            const URL = 'mongodb+srv://tomas2:1roZJIVtj5JnG5HH@cluster0.nmb6c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-            let rta = await mongoose.connect(URL, {
-                useNewUrlParser: true,
-                useUnifiedTopology:true
-            })
-            console.log("base de datos conectada")
-        }
-        catch (error){
-            console.log(`Error en CRUD: ${error}`)
-        }
+if (config.DB === "mongo") {
+  async function CRUD() {
+    try {
+      const URL =
+        "mongodb+srv://tomas2:1roZJIVtj5JnG5HH@cluster0.nmb6c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+      let rta = await mongoose.connect(URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
+      console.log("base de datos conectada");
+    } catch (error) {
+      console.log(`Error en CRUD: ${error}`);
     }
-    CRUD()
+  }
+  CRUD();
 }
-const productosApiRouter = new Router()
+const productosApiRouter = new Router();
 
+productosApiRouter.get("/", (req, res) => {
+  productos.listarAll().then(function (result) {
+    res.status(200).send(result);
+  });
+});
 
-productosApiRouter.get('/',(req, res) => {
-    const contenido = productos.listarAll()
-    console.log(productos.listarAll())
-    res.status(200).send(contenido);
-})
+productosApiRouter.get("/:id", (req, res) => {
+  productos.listar(req.params.id).then(function (result) {
+      if(result === undefined){
+        res.status(200).send("id no encontrado");
+      } else{
+        res.status(200).send(result);
+      }
+    
+  });
+});
 
-productosApiRouter.get('/:id',(req, res) => {
-    const contenido = productos.listar(req.params.id)
-    console.log(contenido)
-    res.status(200).send();
-})
+productosApiRouter.post("/", (req, res) => {
+  productos.guardar(req.body).then(function (result) {
+    res.status(200).send({message:"el producto se ha creado", producto:result});
+  });
+});
+productosApiRouter.put("/:id", (req, res) => {
+    productos.actualizar(req.body).then(function (result) {
+        res.status(200).send({message:"el producto se ha actualizado", productoId:result});
+      });
+});
+productosApiRouter.delete("/:id", (req, res) => {
+    productos.borrar(req.params.id).then(function (result) {
+        res.status(200).send({message:"el producto se ha borrado", productoId:result});
+      });
+});
+productosApiRouter.delete("/", (req, res) => {
+    productos.borrarAll(req.params.id).then(function () {
+        res.status(200).send({message:"se han borrado todos los productos"});
+      });
+});
 
-productosApiRouter.post('/',(req, res) => {
-    const contenido = productos.guardar()
-    console.log(contenido)
-    res.status(200).send();
-})
-productosApiRouter.put('/:id',(req, res) => {
-    const contenido = productos.modificar(req.params.id)
-    console.log(contenido)
-    res.status(200).send();
-})
-productosApiRouter.delete('/:id',(req, res) => {
-    const contenido = productos.borrar(req.params.id)
-    console.log(contenido)
-    res.status(200).send();
-})
-
-export default productosApiRouter
+export default productosApiRouter;
