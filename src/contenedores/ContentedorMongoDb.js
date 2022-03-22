@@ -1,21 +1,31 @@
-import * as model from "../models/usuario.js";
-
+import * as modelProd from "../models/productos.js";
+import * as modelCart from "../models/carritos.js";
 class ContenedorMongo {
   constructor(ruta) {
     this.ruta = ruta;
   }
   async listar(id) {
     try {
-      const buscado = await model.productos.find({ id: id });
-      return buscado;
+      if (this.ruta === "productos") {
+        const buscado = await modelProd.productos.find({ _id: id });
+        return buscado;
+      } else {
+        const buscado = await modelCart.carritos.find({ _id: id });
+        return buscado;
+      }
     } catch (error) {
-      return undefined
+      return undefined;
     }
   }
   async listarAll() {
     try {
-      let productos = await model.productos.find({});
-      return productos;
+      if (this.ruta === "productos") {
+        let elems = await modelProd.productos.find({});
+        return elems;
+      } else {
+        let elems = await modelCart.carritos.find({});
+        return elems;
+      }
     } catch (error) {
       return console.log("error", error);
     }
@@ -23,34 +33,65 @@ class ContenedorMongo {
 
   async guardar(elem) {
     try {
-      const e = await new model.productos(elem).save();
-      return e;
+        if (this.ruta === "productos"){
+            const e = await new modelProd.productos(elem).save();
+            return e;
+        }else{
+            const e = await new modelCart.carritos(elem).save();
+            return e;
+        }
     } catch {
       return undefined;
     }
   }
   async actualizar(elem, id) {
     try {
-      let productoUpdate = await model.productos.updateOne(
-        { _id: id },
-        { $set:  elem }
-      );
-      return productoUpdate;
+        if(this.ruta === "productos"){
+            let productoUpdate = await modelProd.productos.updateOne(
+                { _id: id },
+                { $set: elem }
+              );
+              return productoUpdate;
+        }else{
+            let cartUpdate = await modelCart.carritos.updateOne(
+                { _id: id },
+                { $set: elem }
+              );
+              return cartUpdate;
+        }
+     
+      
     } catch (error) {
-      return undefined
+      return undefined;
     }
   }
   async borrar(id) {
     try {
-      let prodDelete = await model.productos.deleteOne({ _id: id });
-      console.log(prodDelete);
-      return prodDelete;
+        if(this.ruta === "productos"){
+            let elemDelete = await modelProd.productos.deleteOne({ _id: id });
+            return elemDelete;
+        }else{
+            let elemDelete = await modelCart.carritos.deleteOne({ _id: id });
+            return elemDelete;
+        }
+      
     } catch (error) {
-      return undefined
+      return undefined;
     }
   }
   async borrarAll() {
-    await model.productos.deleteMany({});
+    try {
+        if(this.ruta === "productos"){
+            let deleteAll = await modelProd.productos.deleteMany({});
+            return deleteAll;
+        }else{
+            let deleteAll = await modelCart.carritos.deleteMany({});
+            return deleteAll;
+        }
+      
+    } catch (error) {
+      return undefined;
+    }
   }
 }
 
