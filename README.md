@@ -29,5 +29,5 @@ comando para iniciar el servidor
    
 
 ```
-para cambiar la base de datos modificar DB, en archivo config.js
+para cambiar la base de datos modificar "DB", en archivo config.js
 ### `DB:"firebase" o "mongo"`

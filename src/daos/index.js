@@ -2,7 +2,7 @@
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
 const require = createRequire(import.meta.url); // construct the require method
 var admin = require("firebase-admin");
-var serviceAccount = require(".backend-4df83-firebase-adminsdk-tl00v-825e02ec91.json");
+var serviceAccount = require("./backend-4df83-firebase-adminsdk-tl00v-825e02ec91.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
