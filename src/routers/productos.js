@@ -3,27 +3,17 @@ import productosApiArchivo from "../daos/productos/ProductosDaoArchivo.js";
 import productosApiMongo from "../daos/productos/ProductosDaoMongoDb.js";
 import productosApiFirebase from "../daos/productos/ProductosDaoFirebase.js";
 import config from "../config.js";
-import mongoose from "mongoose";
+
 
 const productos =
-  config.DB === "mongo" ? productosApiMongo : productosApiArchivo || "firebase" ? productosApiFirebase : productosApiArchivo
+  config.DB === "mongo"
+    ? productosApiMongo
+    : productosApiArchivo || "firebase"
+    ? productosApiFirebase
+    : productosApiArchivo;
 
-if (config.DB === "mongo") {
-  async function CRUD() {
-    try {
-      const URL =
-        "mongodb+srv://tomas2:1roZJIVtj5JnG5HH@cluster0.nmb6c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-      let rta = await mongoose.connect(URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
-      console.log("base de datos conectada");
-    } catch (error) {
-      console.log(`Error en CRUD: ${error}`);
-    }
-  }
-  CRUD();
-}
+
+
 const productosApiRouter = new Router();
 
 productosApiRouter.get("/", (req, res) => {
