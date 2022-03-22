@@ -7,17 +7,6 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-async function InitFirebase() {
-  const db = admin.firestore();
-  const query = db.collection("prod");
-  try {
-    let id = 1;
-    let doc = query.doc(`${id}`);
-    await doc.create({ nombre: "jose", dni: 1123124 });
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 //mongo
 import mongoose from "mongoose";
@@ -35,4 +24,4 @@ async function InitMongo() {
   }
 }
 
-export { InitFirebase, InitMongo };
+export { admin, InitMongo };

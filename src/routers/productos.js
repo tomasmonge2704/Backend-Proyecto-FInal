@@ -4,15 +4,12 @@ import productosApiMongo from "../daos/productos/ProductosDaoMongoDb.js";
 import productosApiFirebase from "../daos/productos/ProductosDaoFirebase.js";
 import config from "../config.js";
 
-
 const productos =
   config.DB === "mongo"
     ? productosApiMongo
     : productosApiArchivo || "firebase"
     ? productosApiFirebase
     : productosApiArchivo;
-
-
 
 const productosApiRouter = new Router();
 
@@ -29,7 +26,7 @@ productosApiRouter.get("/", (req, res) => {
 productosApiRouter.get("/:id", (req, res) => {
   productos.listar(req.params.id).then(function (result) {
     if (result === undefined) {
-      res.status(200).send("id no encontrado");
+      res.status(200).send({message:`no se ha encontrado un producto con este ID: ${req.params.id}`});
     } else {
       res.status(200).send(result);
     }
@@ -38,10 +35,18 @@ productosApiRouter.get("/:id", (req, res) => {
 
 productosApiRouter.post("/", (req, res) => {
   try {
+      
     productos.guardar(req.body).then(function (result) {
-      res
-        .status(200)
-        .send({ message: "el producto se ha creado", producto: result });
+        if(result === undefined){
+            res
+            .status(200)
+            .send({ message: "el id de producto ya existe"});
+        }else{
+            res
+            .status(200)
+            .send({ message: "el producto se ha creado", producto: result });
+        }
+      
     });
   } catch (err) {
     console.log("error", err);
@@ -73,7 +78,7 @@ productosApiRouter.delete("/:id", (req, res) => {
 });
 productosApiRouter.delete("/", (req, res) => {
   productos.borrarAll(req.params.id).then(function () {
-    res.status(200).send({ message: "se han borrado todos los productos" });
+    res.status(200).send({ message: "se han borrado todos los productos"});
   });
 });
 

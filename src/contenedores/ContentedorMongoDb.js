@@ -5,12 +5,12 @@ class ContenedorMongo {
     this.ruta = ruta;
   }
   async listar(id) {
-      try{const buscado = await model.productos.find({ id: id });
-      return buscado;}
-      catch (error) {
-        return console.log("error", error);
-      }
-    
+    try {
+      const buscado = await model.productos.find({ id: id });
+      return buscado;
+    } catch (error) {
+      return undefined
+    }
   }
   async listarAll() {
     try {
@@ -22,8 +22,12 @@ class ContenedorMongo {
   }
 
   async guardar(elem) {
-    const e = await new model.productos(elem).save();
-    return e;
+    try {
+      const e = await new model.productos(elem).save();
+      return e;
+    } catch {
+      return undefined;
+    }
   }
   async actualizar(elem) {
     try {
@@ -42,7 +46,7 @@ class ContenedorMongo {
       console.log(prodDelete);
       return prodDelete;
     } catch (error) {
-      return console.log("error", error);
+      return undefined
     }
   }
   async borrarAll() {
