@@ -1,16 +1,27 @@
 ## Available Scripts
-
 Comando para instalar dependencias
 ### `npm install`
 
 comando para iniciar el servidor
-### `yarn start`
+### `npm start`
 ## Project structure
 
 ``` 
-├── # routes
-│    └── #carritos.js
-│    └── #productos.js
+├── # src
+│    ├── #contenedores
+│    │   └──ContenedorArchivo.js
+│    │   └──ContenedorFirebase.js
+│    │   └──ContenedorMongoDb.js
+│    ├── #daos
+│    │   └──carritos
+│    │   └──productos
+│    ├── #models
+│    │   └── carrito.js
+│    │   └──productos.js
+│    ├── #routers
+│    │    └──carrito.js
+│    │    └──productos.js
+│    └── #config.js   
 ├── # carrito.json
 ├── # Productos.json
 │   
@@ -18,3 +29,5 @@ comando para iniciar el servidor
    
 
 ```
+para cambiar la base de datos modificar DB, en archivo config.js
+### `DB:"firebase" o "mongo"`

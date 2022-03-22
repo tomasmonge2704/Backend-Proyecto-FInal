@@ -26,7 +26,8 @@ carritoApiRouter.get("/:id/productos", (req, res) => {
     if (result === undefined) {
       res.status(200).send({message:`no se ha encontrado un carrito con este ID: ${req.params.id}`});
     } else {
-      res.status(200).send(result);
+       
+      res.status(200).send(result[0].productos);
     }
   });
 });
@@ -37,11 +38,11 @@ carritoApiRouter.post("/", (req, res) => {
           if(result === undefined){
               res
               .status(200)
-              .send({ message: "el id de producto ya existe"});
+              .send({ message: "el id de carrito ya existe"});
           }else{
               res
               .status(200)
-              .send({ message: "el producto se ha creado", producto: result });
+              .send({ message: "el carrito se ha creado", carrito: result });
           }
         
       });
@@ -53,15 +54,15 @@ carritoApiRouter.post("/", (req, res) => {
 carritoApiRouter.post("/:id/productos", (req, res) => {
   try {
       
-    carrito.guardar(req.body).then(function (result) {
+    carrito.actualizar(req.body,req.params.id).then(function (result) {
         if(result === undefined){
             res
             .status(200)
-            .send({ message: "el id de producto ya existe"});
+            .send({ message: "No se ha podido guardar"});
         }else{
             res
             .status(200)
-            .send({ message: "el producto se ha creado", producto: result });
+            .send({ message: "productos agregadors:", producto: result });
         }
       
     });
@@ -73,17 +74,17 @@ carritoApiRouter.post("/:id/productos", (req, res) => {
 carritoApiRouter.delete("/:id", (req, res) => {
     carrito.borrar(req.params.id).then(function (result) {
     if (result === undefined) {
-      res.status(200).send({ message: "el producto no se ha encontrado" });
+      res.status(200).send({ message: "el carrito no se ha encontrado" });
     } else {
       res
         .status(200)
-        .send({ message: "el producto se ha borrado", productoId: result });
+        .send({ message: "el carrito se ha borrado", carrito: result });
     }
   });
 });
 carritoApiRouter.delete("/:id/productos/:id_prod", (req, res) => {
-    carrito.borrarAll(req.params.id).then(function () {
-    res.status(200).send({ message: "se han borrado todos los carritos"});
+    carrito.borrar(req.params.id,req.params.id_prod).then(function (result) {
+    res.status(200).send(`se ha borrado este producto: ${result}`);
   });
 });
 
