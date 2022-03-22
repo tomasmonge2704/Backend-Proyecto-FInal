@@ -29,15 +29,15 @@ class ContenedorMongo {
       return undefined;
     }
   }
-  async actualizar(elem) {
+  async actualizar(elem, id) {
     try {
       let productoUpdate = await model.productos.updateOne(
-        { id: elem.id },
-        { $set: { elem } }
+        { _id: id },
+        { $set:  elem }
       );
       return productoUpdate;
     } catch (error) {
-      return console.log("error", error);
+      return undefined
     }
   }
   async borrar(id) {

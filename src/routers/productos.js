@@ -53,11 +53,11 @@ productosApiRouter.post("/", (req, res) => {
   }
 });
 productosApiRouter.put("/:id", (req, res) => {
-  productos.actualizar(req.body).then(function (result) {
-    if (result.acknowledged == false) {
+  productos.actualizar(req.body,req.params.id).then(function (result) {
+    if (result === undefined) {
       res
         .status(200)
-        .send({ message: "el producto no se ha podido actualizar" });
+        .send({ message: "el producto no se ha encontrado" });
     } else {
       res
         .status(200)

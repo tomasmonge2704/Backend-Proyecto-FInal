@@ -29,21 +29,20 @@ class ContenedorFirebase {
 
   async guardar(elem) {
     try {
-      let id = elem.id;
-      let doc = this.query.doc(`${id}`);
+      let doc = this.query.doc();
       await doc.create(elem);
       return elem;
     } catch (error) {
       return undefined;
     }
   }
-  async actualizar(elem) {
+  async actualizar(elem, id) {
     try {
-      const doc = this.query.doc(`${elem.id}`);
-      const item = await doc.update({ elem });
+      const doc = this.query.doc(`${id}`);
+      const item = await doc.update(elem);
       return item;
     } catch (error) {
-      return console.log("error", error);
+      return undefined
     }
   }
   async borrar(id) {
