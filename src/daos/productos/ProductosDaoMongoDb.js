@@ -1,7 +1,8 @@
 import config from "../../config.js";
+import mongoose from "mongoose";
+import ContenedorMongo from "../../contenedores/ContentedorMongoDb.js";
 
-import ContenedorArchivo from "../../contenedores/ContenedorArchivo.js";
 
-const productosApiMongo = new ContenedorArchivo("../../contenedores/Productos.json",'productos')
+const productosApiMongo = new ContenedorMongo("")
 
 export default productosApiMongo

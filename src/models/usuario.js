@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const usuariosCollection = 'usuarios';
+const usuariosCollection = 'productos';
 
 const UsuarioSchema = new mongoose.Schema({
     nombre: {type:String, require:true, max:100},
@@ -9,4 +9,4 @@ const UsuarioSchema = new mongoose.Schema({
    usuario: {type:String, require:true, max:100},
 })
 
-export const usuarios = mongoose.model(usuariosCollection, UsuarioSchema)
+export const productos = mongoose.model(usuariosCollection, UsuarioSchema)

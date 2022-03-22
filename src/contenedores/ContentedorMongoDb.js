@@ -1,3 +1,6 @@
+
+import * as model from '../models/usuario.js'
+
 class ContenedorMongo{
 
     constructor(ruta){
@@ -10,8 +13,8 @@ class ContenedorMongo{
     }
     async listarAll(){
         try {
-            const elems = await fs.readFile(this.ruta, 'utf-8')
-            return JSON.parse(elems)
+            let productos = await model.productos.find({})
+            return productos
         } catch (error){
             return []
         }
@@ -28,7 +31,9 @@ class ContenedorMongo{
         const newElem = {...elem, id: newId}
         elems.push(newElem)
         try {
-            await fs.writeFile(this.ruta, JSON.stringify(elems, null, 2))
+                const usuario = { nombre: 'juan', apellido:'Perez', email: 'jp@gmail.com'}
+        const usuarioSaveModel = new model.productos(usuario);
+        let usuarioSave = await usuarioSaveModel.save()
             return newId
         } catch (error){
             throw new Error(`Error al guardar: ${error}`)
