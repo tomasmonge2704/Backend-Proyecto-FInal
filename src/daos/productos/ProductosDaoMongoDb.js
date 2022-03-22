@@ -1,6 +1,5 @@
-import config from "../../config.js";
-import ContenedorMongo from "../../contenedores/ContentedorMongoDb.js";
 
+import ContenedorMongo from "../../contenedores/ContentedorMongoDb.js";
 
 const productosApiMongo = new ContenedorMongo("")
 
