@@ -63,6 +63,18 @@ class ContenedorMongo {
       return undefined;
     }
   }
+  async actualizarProd(elem, id) {
+    try {
+        let cartUpdate = await modelCart.carritos.updateOne(
+          { _id: id },
+          { $set: { productos: elem } }
+        );
+        return cartUpdate;
+    
+    } catch (error) {
+      return undefined;
+    }
+  }
   async borrar(id) {
     try {
       if (this.ruta === "productos") {
@@ -77,7 +89,18 @@ class ContenedorMongo {
     }
   }
   async borrarProd(id, id_prod) {
-    
+    try {
+        let buscado = await modelCart.carritos.find({ _id: id });
+        buscado = buscado[0].productos.filter((e) => e.id !== parseInt(id_prod))
+        let cartUpdate = await modelCart.carritos.updateOne(
+            { _id: id },
+            { $set: { productos: buscado } }
+          );
+          return cartUpdate;
+        }
+       catch (error) {
+        return undefined
+      }
   }
   async borrarAll() {
     try {
