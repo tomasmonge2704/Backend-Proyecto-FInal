@@ -77,21 +77,7 @@ class ContenedorMongo {
     }
   }
   async borrarProd(id, id_prod) {
-    const elems = await modelCart.carritos.find({ _id: id });
-    const index = elems.findIndex((e) => e.id == id_prod);
-    if (index == -1) {
-      throw new Error(`Error al borrar: no se encontro el Id ${id}`);
-    }
-    elems.splice(index, 1);
-    try {
-     await modelCart.carritos.updateOne(
-            { _id: id },
-            { $set: { productos: elems } }
-          );
-      return JSON.parse(index);
-    } catch (error) {
-      return undefined
-    }
+    
   }
   async borrarAll() {
     try {

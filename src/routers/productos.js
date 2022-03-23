@@ -4,12 +4,13 @@ import productosApiMongo from "../daos/productos/ProductosDaoMongoDb.js";
 import productosApiFirebase from "../daos/productos/ProductosDaoFirebase.js";
 import config from "../config.js";
 
-const productos =
-  config.DB === "mongo"
-    ? productosApiMongo
-    : productosApiArchivo || "firebase"
-    ? productosApiFirebase
-    : productosApiArchivo;
+let productos = productosApiArchivo
+if(config.DB === "mongo"){
+    productos = productosApiMongo
+}
+if(config.DB === "firebase"){
+    productos = productosApiFirebase
+} 
 
 const productosApiRouter = new Router();
 
@@ -19,7 +20,7 @@ productosApiRouter.get("/", (req, res) => {
       res.status(200).send(result);
     });
   } catch (err) {
-    console.log("error", err);
+    res.status(400).send(err);
   }
 });
 

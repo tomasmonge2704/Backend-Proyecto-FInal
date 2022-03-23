@@ -3,12 +3,14 @@ import config from "../config.js";
 import carritoApiArchivo from "../daos/carritos/CarritosDaoArchivo.js";
 import CarritosApiFirebase from "../daos/carritos/CarritosDaoFirebase.js";
 import carritosApiMongo from "../daos/carritos/CarritosDaoMongoDb.js";
-const carrito =
-  config.DB === "mongo"
-    ? carritosApiMongo
-    : carritoApiArchivo || "firebase"
-    ? CarritosApiFirebase
-    : carritoApiArchivo;
+
+let carrito = carritoApiArchivo
+if(config.DB === "mongo"){
+    carrito = carritosApiMongo
+}
+if(config.DB === "firebase"){
+    carrito = CarritosApiFirebase
+} 
 
 const carritoApiRouter = new Router();
 
@@ -27,7 +29,7 @@ carritoApiRouter.get("/:id/productos", (req, res) => {
       res.status(200).send({message:`no se ha encontrado un carrito con este ID: ${req.params.id}`});
     } else {
        
-      res.status(200).send(result[0].productos);
+      res.status(200).send(result);
     }
   });
 });
@@ -83,8 +85,8 @@ carritoApiRouter.delete("/:id", (req, res) => {
   });
 });
 carritoApiRouter.delete("/:id/productos/:id_prod", (req, res) => {
-    carrito.borrar(req.params.id,req.params.id_prod).then(function (result) {
-    res.status(200).send(`se ha borrado este producto: ${result}`);
+    carrito.borrarProd(req.params.id,req.params.id_prod).then(function (result) {
+    res.status(200).send({message:"producto borrado:", producto:result});
   });
 });
 
