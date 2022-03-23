@@ -29,17 +29,30 @@ class ContenedorFirebase {
 
   async guardar(elem) {
     try {
-      let doc = this.query.doc();
+    const querySnapshot = await this.query.get();
+      let docs = querySnapshot.docs;
+      let id = docs.length + 1
+      let doc = this.query.doc(`${id}`);
+      elem.id = id
       await doc.create(elem);
       return elem;
     } catch (error) {
-      return undefined;
+      return console.log(error);
     }
   }
   async actualizar(elem, id) {
     try {
       const doc = this.query.doc(`${id}`);
       const item = await doc.update(elem);
+      return item;
+    } catch (error) {
+      return undefined
+    }
+  }
+  async actualizarProd(elem, id) {
+    try {
+      const doc = this.query.doc(`${id}`);
+      const item = await doc.update({productos:elem});
       return item;
     } catch (error) {
       return undefined
@@ -52,6 +65,18 @@ class ContenedorFirebase {
       await doc.delete();
       const response = item.data();
       return response;
+    } catch (error) {
+      return undefined;
+    }
+  }
+  async borrarProd(id, id_prod) {
+    try {
+      const doc = this.query.doc(`${id}`);
+      const item = await doc.get();
+      const response = item.data();
+      const prod = response.productos.filter((e) => e.id !== parseInt(id_prod))
+      await doc.update({productos:prod});
+      return id_prod
     } catch (error) {
       return undefined;
     }

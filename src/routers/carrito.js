@@ -56,7 +56,7 @@ carritoApiRouter.post("/", (req, res) => {
 carritoApiRouter.post("/:id/productos", (req, res) => {
   try {
       
-    carrito.actualizar(req.body,req.params.id).then(function (result) {
+    carrito.actualizarProd(req.body,req.params.id).then(function (result) {
         if(result === undefined){
             res
             .status(200)
@@ -86,7 +86,7 @@ carritoApiRouter.delete("/:id", (req, res) => {
 });
 carritoApiRouter.delete("/:id/productos/:id_prod", (req, res) => {
     carrito.borrarProd(req.params.id,req.params.id_prod).then(function (result) {
-    res.status(200).send({message:"producto borrado:", producto:result});
+    res.status(200).send({message:"producto borrado:", productoId:result});
   });
 });
 
