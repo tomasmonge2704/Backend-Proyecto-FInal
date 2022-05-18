@@ -41,7 +41,7 @@ function renderProductos(data) {
     const html = data.map((elem, index) => {
         return (`
         <tr>
-        <td>${elem.name}</td>
+        <td>${elem.nombre}</td>
         <td>${elem.precio}</td>
         <td><img src="${elem.imageURL}" style="max-height:30px"></td>
     </tr>

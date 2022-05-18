@@ -1,13 +1,16 @@
 import mongoose from "mongoose";
 
-const usuariosCollection = 'productos';
+const productosCollection = 'productos';
 
-const UsuarioSchema = new mongoose.Schema({
+const productosSchema = new mongoose.Schema({
+    id:{type:Number,require:true, max:100},
+    timestamp: {type:String, require:true, max:100},
     nombre: {type:String, require:true, max:100},
-    apellido: {type:String, require:true, max:100},
-    email: {type:String, require:true, max:100},
-   usuario: {type:String, require:true, max:100},
-   id:{type:Number,require:true, max:100}
+    descripcion: {type:String, require:true, max:100},
+    codigo: {type:String, require:true, max:100},
+    fotoURL: {type:String, require:true, max:100},
+    precio: {type:String, require:true, max:100},
+    stock: {type:String, require:true, max:100},
 })
 
-export const productos = mongoose.model(usuariosCollection, UsuarioSchema)
+export const productos = mongoose.model(productosCollection, productosSchema)

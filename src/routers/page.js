@@ -1,6 +1,28 @@
+import productosApiArchivo from "../daos/productos/ProductosDaoArchivo.js";
+import productosApiMongo from "../daos/productos/ProductosDaoMongoDb.js";
+import productosApiFirebase from "../daos/productos/ProductosDaoFirebase.js";
+import config from "../config.js";
+
+let productos = productosApiArchivo
+if(config.DB === "mongo"){
+    productos = productosApiMongo
+}
+if(config.DB === "firebase"){
+    productos = productosApiFirebase
+} 
+
 //index
 function getRoot(req,res){
-    res.render('index',{productos})
+    const user = req.user.username
+    try {
+        productos.listarAll().then(function (result) {
+            productos=result
+            console.log(productos)
+            res.render('index',{user,productos})
+        });
+      } catch (err) {
+        res.status(400).send(err);
+      }
 }
 //login
 function getLogin(req, res){
@@ -20,7 +42,7 @@ function getSignup(req,res){
 //PROSSER LOGIN
 function postLogin (req, res){
     var user = req.user;
-    res.render('index')
+    res.redirect('/')
 }
 //PROCESS SIGNUP
 function postSignup (req, res){

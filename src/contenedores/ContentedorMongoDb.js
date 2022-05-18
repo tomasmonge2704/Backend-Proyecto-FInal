@@ -1,5 +1,9 @@
 import * as modelProd from "../models/productos.js";
 import * as modelCart from "../models/carritos.js";
+var hoy = new Date();
+var fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
+var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
+var fechaYHora = fecha + ' ' + hora;
 class ContenedorMongo {
   constructor(ruta) {
     this.ruta = ruta;
@@ -32,8 +36,10 @@ class ContenedorMongo {
   }
 
   async guardar(elem) {
+    
     try {
       if (this.ruta === "productos") {
+        elem.timestamp = fechaYHora
         const e = await new modelProd.productos(elem).save();
         return e;
       } else {

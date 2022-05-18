@@ -1,3 +1,7 @@
+var hoy = new Date();
+var fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
+var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
+var fechaYHora = fecha + ' ' + hora;
 class ContenedorFirebase {
   constructor(query) {
     this.query = query;
@@ -28,6 +32,7 @@ class ContenedorFirebase {
   }
 
   async guardar(elem) {
+    elem.timestamp = fechaYHora
     try {
     const querySnapshot = await this.query.get();
       let docs = querySnapshot.docs;
