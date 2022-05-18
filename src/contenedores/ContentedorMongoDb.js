@@ -24,10 +24,10 @@ class ContenedorMongo {
   async listarAll() {
     try {
       if (this.ruta === "productos") {
-        let elems = await modelProd.productos.find({});
+        let elems = await modelProd.productos.find({}).lean();
         return elems;
       } else {
-        let elems = await modelCart.carritos.find({});
+        let elems = await modelCart.carritos.find({}).lean();
         return elems;
       }
     } catch (error) {

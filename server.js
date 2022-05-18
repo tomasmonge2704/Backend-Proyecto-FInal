@@ -45,6 +45,7 @@ app.post('/signup', passport.authenticate('signup', { failureRedirect: '/failsig
 app.get('/failsignup', getFailsignup);
 app.get('/logout', getLogout)
 app.get('*', failRoute);
+
 const connectedServer = app.listen(config.PORT, () => {
     console.log(`Servidor escuchando en el puerto ${config.PORT}`)
 })

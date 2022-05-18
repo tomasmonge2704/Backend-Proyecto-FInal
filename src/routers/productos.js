@@ -13,11 +13,12 @@ if(config.DB === "firebase"){
 } 
 
 const productosApiRouter = new Router();
-
+let contenido = []
 productosApiRouter.get("/", (req, res) => {
   try {
     productos.listarAll().then(function (result) {
-      res.status(200).send(result);
+      contenido = result
+      res.status(200).render('productos',{contenido})
     });
   } catch (err) {
     res.status(400).send(err);
@@ -45,7 +46,7 @@ productosApiRouter.post("/", (req, res) => {
         }else{
             res
             .status(200)
-            .send({ message: "el producto se ha creado", producto: result });
+            .redirect('/')
         }
       
     });

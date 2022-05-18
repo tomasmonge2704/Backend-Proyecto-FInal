@@ -13,13 +13,14 @@ if(config.DB === "firebase"){
 } 
 
 const carritoApiRouter = new Router();
-
+let contenido = []
 carritoApiRouter.get("/", (req, res) => {
     carrito.listarAll().then(function (result) {
     if (result === undefined) {
       res.status(200).send({message:"no se han encontrado carritos"});
     } else {
-      res.status(200).send(result);
+      contenido = result
+      res.status(200).render('carrito', {contenido})
     }
   });
 });

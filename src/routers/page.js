@@ -10,15 +10,14 @@ if(config.DB === "mongo"){
 if(config.DB === "firebase"){
     productos = productosApiFirebase
 } 
-
+let contenido = []
 //index
 function getRoot(req,res){
     const user = req.user.username
     try {
         productos.listarAll().then(function (result) {
-            productos=result
-            console.log(productos)
-            res.render('index',{user,productos})
+            contenido = result
+            res.render('index',{user,contenido})
         });
       } catch (err) {
         res.status(400).send(err);
