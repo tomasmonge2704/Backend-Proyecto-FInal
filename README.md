@@ -29,5 +29,12 @@ comando para iniciar el servidor
    
 
 ```
+## login
+POST:http://localhost:8080/login
+para hacerlo desde postman usar formato JSON:
+{
+    "username":"sad",
+    "password":"123"
+}
 para cambiar la base de datos modificar "DB", en archivo config.js
 ### `DB:"firebase" o "mongo"`
