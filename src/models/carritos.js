@@ -1,11 +1,22 @@
 import mongoose from "mongoose";
 
-const carritosCollection = 'carritos';
+const carritosCollection = "carritos";
 
 const carritoSchema = new mongoose.Schema({
-    id: {type:Number, require:true},
-    timeStamp: {type:String, require:true},
-    productos:[{id:{type:Number, require:true},timestamp:{type:String, require:true},nombre:{type:String, require:true}}]
-})
+  id: { type: Number, require: true },
+  timeStamp: { type: String, require: true },
+  productos: [
+    {
+      id: { type: Number, require: true },
+      timestamp: { type: String, require: true },
+      nombre: { type: String, require: true },
+      descripcion: { type: String, require: true },
+      codigo: { type: String, require: true, max: 100 },
+      fotoURL: { type: String, require: true, max: 100 },
+      precio: { type: String, require: true, max: 100 },
+      stock: { type: String, require: true, max: 100 },
+    },
+  ],
+});
 
-export const carritos = mongoose.model(carritosCollection, carritoSchema)
+export const carritos = mongoose.model(carritosCollection, carritoSchema);

@@ -13,11 +13,11 @@ if(config.DB === "firebase"){
 let contenido = []
 //index
 function getRoot(req,res){
-    const user = req.user.username
+    const username = req.user.username
     try {
         productos.listarAll().then(function (result) {
             contenido = result
-            res.render('index',{user,contenido})
+            res.render('index',{username,contenido})
         });
       } catch (err) {
         res.status(400).send(err);
@@ -46,7 +46,7 @@ function postLogin (req, res){
 //PROCESS SIGNUP
 function postSignup (req, res){
     var user = req.body;
-    res.render('index')
+    res.redirect('/')
 }
 function getFaillogin (req,res){
     console.log('error en login');
@@ -59,7 +59,7 @@ function getFailsignup(req,res){
 //LOGOUT
 function getLogout(req,res){
     req.logout();
-    res.render('login')
+    res.redirect('/login')
 }
 function failRoute(req,res){
     res.status(404).render('routing-error',{})

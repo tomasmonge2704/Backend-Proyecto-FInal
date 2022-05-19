@@ -11,10 +11,10 @@ class ContenedorMongo {
   async listar(id) {
     try {
       if (this.ruta === "productos") {
-        const buscado = await modelProd.productos.find({ _id: id });
+        const buscado = await modelProd.productos.find({ id: id }).lean();
         return buscado;
       } else {
-        const buscado = await modelCart.carritos.find({ _id: id });
+        const buscado = await modelCart.carritos.find({ id: `${id}` }).lean();
         return buscado;
       }
     } catch (error) {
