@@ -3,7 +3,7 @@ import productosApiArchivo from "../daos/productos/ProductosDaoArchivo.js";
 import productosApiMongo from "../daos/productos/ProductosDaoMongoDb.js";
 import productosApiFirebase from "../daos/productos/ProductosDaoFirebase.js";
 import config from "../config.js";
-
+import { passport, checkAuthentication } from "./passport.js";
 let productos = productosApiArchivo
 if(config.DB === "mongo"){
     productos = productosApiMongo
@@ -14,7 +14,7 @@ if(config.DB === "firebase"){
 
 const productosApiRouter = new Router();
 let contenido = []
-productosApiRouter.get("/", (req, res) => {
+productosApiRouter.get("/",checkAuthentication, (req, res) => {
   try {
     productos.listarAll().then(function (result) {
       contenido = result
@@ -25,7 +25,7 @@ productosApiRouter.get("/", (req, res) => {
   }
 });
 
-productosApiRouter.get("/:id", (req, res) => {
+productosApiRouter.get("/:id",checkAuthentication, (req, res) => {
   productos.listar(req.params.id).then(function (result) {
     if (result === undefined) {
       res.status(200).send({message:`no se ha encontrado un producto con este ID: ${req.params.id}`});
@@ -35,7 +35,7 @@ productosApiRouter.get("/:id", (req, res) => {
   });
 });
 
-productosApiRouter.post("/", (req, res) => {
+productosApiRouter.post("/",checkAuthentication,(req, res) => {
   try {
       
     productos.guardar(req.body).then(function (result) {
@@ -54,7 +54,7 @@ productosApiRouter.post("/", (req, res) => {
     console.log("error", err);
   }
 });
-productosApiRouter.put("/:id", (req, res) => {
+productosApiRouter.put("/:id",checkAuthentication,(req, res) => {
   productos.actualizar(req.body,req.params.id).then(function (result) {
     if (result === undefined) {
       res
@@ -67,7 +67,7 @@ productosApiRouter.put("/:id", (req, res) => {
     }
   });
 });
-productosApiRouter.delete("/:id", (req, res) => {
+productosApiRouter.delete("/:id",checkAuthentication,(req, res) => {
   productos.borrar(req.params.id).then(function (result) {
     if (result === undefined) {
       res.status(200).send({ message: "el producto no se ha encontrado" });
@@ -78,7 +78,7 @@ productosApiRouter.delete("/:id", (req, res) => {
     }
   });
 });
-productosApiRouter.delete("/", (req, res) => {
+productosApiRouter.delete("/",checkAuthentication,(req, res) => {
   productos.borrarAll(req.params.id).then(function () {
     res.status(200).send({ message: "se han borrado todos los productos"});
   });

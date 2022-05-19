@@ -1,8 +1,9 @@
+import { Router } from "express";
 import productosApiArchivo from "../daos/productos/ProductosDaoArchivo.js";
 import productosApiMongo from "../daos/productos/ProductosDaoMongoDb.js";
 import productosApiFirebase from "../daos/productos/ProductosDaoFirebase.js";
 import config from "../config.js";
-
+import { passport, checkAuthentication } from "./passport.js";
 let productos = productosApiArchivo
 if(config.DB === "mongo"){
     productos = productosApiMongo
@@ -11,6 +12,15 @@ if(config.DB === "firebase"){
     productos = productosApiFirebase
 } 
 let contenido = []
+const pageRouter = new Router();
+pageRouter.get('/', checkAuthentication, getRoot);
+pageRouter.get('/login', getLogin)
+pageRouter.post('/login', passport.authenticate('login', { failureRedirect: '/faillogin' }), postLogin)
+pageRouter.get('/faillogin', getFaillogin);
+pageRouter.get('/signup', getSignup);
+pageRouter.post('/signup', passport.authenticate('signup', { failureRedirect: '/failsignup' }), postSignup);
+pageRouter.get('/failsignup', getFailsignup);
+pageRouter.get('/logout', getLogout)
 //index
 function getRoot(req,res){
     const username = req.user.username
@@ -65,4 +75,4 @@ function failRoute(req,res){
     res.status(404).render('routing-error',{})
 }
 
-export {getRoot,getLogin,getSignup,postLogin,postSignup,getFaillogin,getFailsignup,getLogout,failRoute}
+export {pageRouter,failRoute}

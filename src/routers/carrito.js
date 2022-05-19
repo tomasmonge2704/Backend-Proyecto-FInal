@@ -3,7 +3,7 @@ import config from "../config.js";
 import carritoApiArchivo from "../daos/carritos/CarritosDaoArchivo.js";
 import CarritosApiFirebase from "../daos/carritos/CarritosDaoFirebase.js";
 import carritosApiMongo from "../daos/carritos/CarritosDaoMongoDb.js";
-
+import { passport, checkAuthentication } from "./passport.js";
 let carrito = carritoApiArchivo;
 if (config.DB === "mongo") {
   carrito = carritosApiMongo;
@@ -15,7 +15,7 @@ if (config.DB === "firebase") {
 const carritoApiRouter = new Router();
 let contenido = [];
 
-carritoApiRouter.get("/:id/productos", (req, res) => {
+carritoApiRouter.get("/:id/productos",checkAuthentication, (req, res) => {
   carrito.listar(req.params.id).then(function (result) {
     if (result === undefined) {
       res.status(200).render("carrito", { contenido });
@@ -27,7 +27,7 @@ carritoApiRouter.get("/:id/productos", (req, res) => {
     }
   });
 });
-carritoApiRouter.post("/", (req, res) => {
+carritoApiRouter.post("/",checkAuthentication, (req, res) => {
   try {
     carrito.guardar(req.body).then(function (result) {
       if (result === undefined) {
@@ -43,7 +43,7 @@ carritoApiRouter.post("/", (req, res) => {
   }
 });
 
-carritoApiRouter.post("/:id/productos", (req, res) => {
+carritoApiRouter.post("/:id/productos",checkAuthentication, (req, res) => {
   try {
     carrito.listar(req.params.id).then(function (result) {
       if (result == undefined) {
@@ -66,7 +66,7 @@ carritoApiRouter.post("/:id/productos", (req, res) => {
   }
 });
 
-carritoApiRouter.delete("/:id", (req, res) => {
+carritoApiRouter.delete("/:id",checkAuthentication, (req, res) => {
   carrito.borrar(req.params.id).then(function (result) {
     if (result === undefined) {
       res.status(200).send({ message: "el carrito no se ha encontrado" });
@@ -77,7 +77,7 @@ carritoApiRouter.delete("/:id", (req, res) => {
     }
   });
 });
-carritoApiRouter.delete("/:id/productos/:id_prod", (req, res) => {
+carritoApiRouter.delete("/:id/productos/:id_prod",checkAuthentication, (req, res) => {
   carrito.borrarProd(req.params.id, req.params.id_prod).then(function (result) {
     res.status(200).send({ message: "producto borrado:", productoId: result });
   });

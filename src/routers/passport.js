@@ -100,7 +100,7 @@ function checkAuthentication(req,res,next){
     if(req.isAuthenticated()){
         next()
     }else{
-        res.redirect("/login")
+        res.status(401).redirect("/login")
     }
 }
 //fin passport

@@ -3,9 +3,9 @@ import session from "express-session"
 import config from "./src/config.js";
 import productosApiRouter from "./src/routers/productos.js";
 import carritoApiRouter from "./src/routers/carrito.js";
-import { getRoot, getLogin, getSignup, postLogin, postSignup, getFaillogin, getFailsignup, getLogout, failRoute } from "./src/routers/page.js";
+import {pageRouter,failRoute} from "./src/routers/page.js";
 import exphbs from 'express-handlebars'
-import { passport, checkAuthentication } from "./src/routers/passport.js";
+import passport from "./src/routers/passport.js";
 const app = express()
 
 app.use(session({
@@ -36,14 +36,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use("/api/productos", productosApiRouter)
 app.use("/api/carrito", carritoApiRouter)
-app.get('/', checkAuthentication, getRoot);
-app.get('/login', getLogin)
-app.post('/login', passport.authenticate('login', { failureRedirect: '/faillogin' }), postLogin)
-app.get('/faillogin', getFaillogin);
-app.get('/signup', getSignup);
-app.post('/signup', passport.authenticate('signup', { failureRedirect: '/failsignup' }), postSignup);
-app.get('/failsignup', getFailsignup);
-app.get('/logout', getLogout)
+app.use("/",pageRouter)
 app.get('*', failRoute);
 
 const connectedServer = app.listen(config.PORT, () => {
