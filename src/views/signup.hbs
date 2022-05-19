@@ -14,9 +14,18 @@
   
     <div class="container mt-3">
     <div class="jumbotron">
-      <h1 style="color:blue">Login de usuario</h1>
+      <h1 style="color:blue">Signup de usuario</h1>
       <br>
             <form action="/signup" method="post">
+            
+ <div class="form-group">
+               <label for="name"><b>Ingrese su Avatar</b></label> 
+              <div class="custom-file">
+              
+  <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+  <label class="custom-file-label" for="customFileLang">Foto o Avatar</label>
+</div>
+              </div>
               <div class="form-group">
                <label for="name"><b>Ingrese su username</b></label> 
                <input id="name" class="form-control" type="text" name="username">
@@ -36,6 +45,14 @@
               <div class="form-group">
                <label for="name"><b>Ingrese apellido</b></label> 
                <input id="name" class="form-control" type="text" name="apellido">
+              </div>
+              <div class="form-group">
+               <label for="name"><b>Ingrese su edad</b></label> 
+               <input id="name" class="form-control" type="text" name="edad">
+              </div>
+              <div class="form-group">
+               <label for="name"><b>Ingrese su Telefono</b></label> 
+               <input id="name" class="form-control" type="text" name="telefono">
               </div>
                <button class="btn btn-success mt-3 mb-5">Enviar</button>
             </form>

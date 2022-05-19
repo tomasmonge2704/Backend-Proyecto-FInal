@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const productosCollection = 'productos';
 
 const productosSchema = new mongoose.Schema({
-    id:{type:Number,require:true, max:100},
+    id:{type:String,require:true, max:100},
     timestamp: {type:String, require:true, max:100},
     nombre: {type:String, require:true, max:100},
     descripcion: {type:String, require:true, max:100},

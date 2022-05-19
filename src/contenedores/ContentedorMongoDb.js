@@ -40,6 +40,7 @@ class ContenedorMongo {
     try {
       if (this.ruta === "productos") {
         elem.timestamp = fechaYHora
+        elem.id = this.listarAll.length + 1
         const e = await new modelProd.productos(elem).save();
         return e;
       } else {
