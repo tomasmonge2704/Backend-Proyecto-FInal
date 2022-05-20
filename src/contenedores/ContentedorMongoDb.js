@@ -85,10 +85,10 @@ class ContenedorMongo {
   async borrar(id) {
     try {
       if (this.ruta === "productos") {
-        let elemDelete = await modelProd.productos.deleteOne({ _id: id });
+        let elemDelete = await modelProd.productos.deleteOne({ id: id });
         return elemDelete;
       } else {
-        let elemDelete = await modelCart.carritos.deleteOne({ _id: id });
+        let elemDelete = await modelCart.carritos.deleteOne({ id: id });
         return elemDelete;
       }
     } catch (error) {
@@ -97,7 +97,7 @@ class ContenedorMongo {
   }
   async borrarProd(id, id_prod) {
     try {
-        let buscado = await modelCart.carritos.find({ _id: id });
+        let buscado = await modelCart.carritos.find({ id: id });
         buscado = buscado[0].productos.filter((e) => e.id !== parseInt(id_prod))
         let cartUpdate = await modelCart.carritos.updateOne(
             { _id: id },

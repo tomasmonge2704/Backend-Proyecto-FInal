@@ -27,6 +27,10 @@ function getRoot(req,res){
     try {
         productos.listarAll().then(function (result) {
             contenido = result
+            contenido.forEach(element => {
+                element.username = username
+            });
+            console.log(contenido)
             res.render('index',{username,contenido})
         });
       } catch (err) {
