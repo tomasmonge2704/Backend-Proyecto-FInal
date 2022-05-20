@@ -15,19 +15,50 @@ if (config.DB === "firebase") {
 const carritoApiRouter = new Router();
 let contenido = [];
 
-carritoApiRouter.get("/:id/productos",checkAuthentication, (req, res) => {
-  carrito.listar(req.params.id).then(function (result) {
+carritoApiRouter.post("/", checkAuthentication, postCarrito);
+carritoApiRouter.get("/:id/productos", checkAuthentication, getProdCarrito);
+carritoApiRouter.delete("/:id", checkAuthentication, deleteCarrito);
+carritoApiRouter.post("/:id/productos", checkAuthentication, postProdCarrito);
+carritoApiRouter.delete("/:id/productos/:id_prod",checkAuthentication,deleteProdCarrito);
+
+function deleteProdCarrito(req, res) {
+  carrito.borrarProd(req.params.id, req.params.id_prod).then(function (result) {
+    res.status(200).send({ message: "producto borrado:", productoId: result });
+  });
+}
+
+function postProdCarrito(req, res) {
+  try {
+    carrito.listar(req.params.id).then(function (result) {
+      if (result == undefined) {
+        carrito.guardar(req.body);
+        res.status(200).render("carrito", { contenido });
+      } else {
+        carrito.actualizarProd(req.body, req.params.id).then(function (result) {
+          if (result === undefined) {
+            res.status(200).send({ message: "No se ha podido guardar" });
+          } else {
+            res.status(200).render("carrito", { contenido });
+          }
+        });
+      }
+    });
+  } catch (err) {
+    console.log("error", err);
+  }
+}
+function deleteCarrito(req, res) {
+  carrito.borrar(req.params.id).then(function (result) {
     if (result === undefined) {
-      res.status(200).render("carrito", { contenido });
+      res.status(200).send({ message: "el carrito no se ha encontrado" });
     } else {
-      contenido = result[0];
-      contenido = contenido.productos;
-      console.log(contenido);
-      res.status(200).render("carrito", { contenido });
+      res
+        .status(200)
+        .send({ message: "el carrito se ha borrado", carrito: result });
     }
   });
-});
-carritoApiRouter.post("/",checkAuthentication, (req, res) => {
+}
+function postCarrito(req, res) {
   try {
     carrito.guardar(req.body).then(function (result) {
       if (result === undefined) {
@@ -41,46 +72,17 @@ carritoApiRouter.post("/",checkAuthentication, (req, res) => {
   } catch (err) {
     console.log("error", err);
   }
-});
-
-carritoApiRouter.post("/:id/productos",checkAuthentication, (req, res) => {
-  try {
-    carrito.listar(req.params.id).then(function (result) {
-      if (result == undefined) {
-        carrito.guardar(req.body);
-        res.status(200).render("carrito", { contenido });
-        
-      } else {
-        carrito.actualizarProd(req.body, req.params.id).then(function (result) {
-          if (result === undefined) {
-            res.status(200).send({ message: "No se ha podido guardar" });
-          } else {
-            res.status(200).render("carrito", { contenido });
-          }
-        });
-      }
-    });
-    
-  } catch (err) {
-    console.log("error", err);
-  }
-});
-
-carritoApiRouter.delete("/:id",checkAuthentication, (req, res) => {
-  carrito.borrar(req.params.id).then(function (result) {
+}
+function getProdCarrito(req, res) {
+  carrito.listar(req.params.id).then(function (result) {
     if (result === undefined) {
-      res.status(200).send({ message: "el carrito no se ha encontrado" });
+      res.status(200).render("carrito", { contenido });
     } else {
-      res
-        .status(200)
-        .send({ message: "el carrito se ha borrado", carrito: result });
+      contenido = result[0];
+      contenido = contenido.productos;
+      res.status(200).render("carrito", { contenido });
     }
   });
-});
-carritoApiRouter.delete("/:id/productos/:id_prod",checkAuthentication, (req, res) => {
-  carrito.borrarProd(req.params.id, req.params.id_prod).then(function (result) {
-    res.status(200).send({ message: "producto borrado:", productoId: result });
-  });
-});
+}
 
 export default carritoApiRouter;

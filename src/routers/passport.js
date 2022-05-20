@@ -75,7 +75,6 @@ passport.use(
           console.log("User already exists");
           return done(null, false);
         }
-        console.log(req.body, username, password);
         const newUser = {
           username: username,
           password: createHash(password),
@@ -90,7 +89,6 @@ passport.use(
             console.log("Error in Saving user: " + err);
             return done(err);
           }
-          console.log(user);
           console.log("User Registration succesful");
           return done(null, userWithId);
         });
@@ -114,7 +112,7 @@ function checkAuthentication(req, res, next) {
   if (req.isAuthenticated()) {
     next();
   } else {
-    res.status(401).redirect("/login");
+    res.status(401).render("login");
   }
 }
 //fin passport

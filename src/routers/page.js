@@ -30,7 +30,6 @@ function getRoot(req,res){
             contenido.forEach(element => {
                 element.username = username
             });
-            console.log(contenido)
             res.render('index',{username,contenido})
         });
       } catch (err) {

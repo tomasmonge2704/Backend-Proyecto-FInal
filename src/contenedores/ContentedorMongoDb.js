@@ -39,10 +39,10 @@ class ContenedorMongo {
     
     try {
       if (this.ruta === "productos") {
-        elem.timestamp = fechaYHora
-        elem.id = this.listarAll.length + 1
-        const e = await new modelProd.productos(elem).save();
-        return e;
+          elem.timestamp = fechaYHora
+          elem.id = elem.nombre
+          const e = await new modelProd.productos(elem).save();
+          return e;
       } else {
         const e = await new modelCart.carritos(elem).save();
         return e;
@@ -55,13 +55,13 @@ class ContenedorMongo {
     try {
       if (this.ruta === "productos") {
         let productoUpdate = await modelProd.productos.updateOne(
-          { _id: id },
+          { id: id },
           { $set: elem }
         );
         return productoUpdate;
       } else {
         let cartUpdate = await modelCart.carritos.updateOne(
-          { _id: id },
+          { id: id },
           { $set: { productos: elem } }
         );
         return cartUpdate;
@@ -73,7 +73,7 @@ class ContenedorMongo {
   async actualizarProd(elem, id) {
     try {
         let cartUpdate = await modelCart.carritos.updateOne(
-          { _id: id },
+          { id: id },
           { $set: { productos: elem } }
         );
         return cartUpdate;
