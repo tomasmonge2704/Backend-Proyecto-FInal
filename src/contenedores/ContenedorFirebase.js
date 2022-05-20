@@ -2,6 +2,7 @@ var hoy = new Date();
 var fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
 var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
 var fechaYHora = fecha + ' ' + hora;
+import generateId from "./faker.js";
 class ContenedorFirebase {
   constructor(query) {
     this.query = query;
@@ -35,8 +36,7 @@ class ContenedorFirebase {
     elem.timestamp = fechaYHora
     try {
     const querySnapshot = await this.query.get();
-      let docs = querySnapshot.docs;
-      let id = docs.length + 1
+      let id = generateId()
       let doc = this.query.doc(`${id}`);
       elem.id = id
       await doc.create(elem);

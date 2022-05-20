@@ -19,28 +19,31 @@ carritoApiRouter.post("/", checkAuthentication, postCarrito);
 carritoApiRouter.get("/:id/productos", checkAuthentication, getProdCarrito);
 carritoApiRouter.delete("/:id", checkAuthentication, deleteCarrito);
 carritoApiRouter.post("/:id/productos", checkAuthentication, postProdCarrito);
-carritoApiRouter.delete("/:id/productos/:id_prod",checkAuthentication,deleteProdCarrito);
+carritoApiRouter.delete(
+  "/:id/productos/:id_prod",
+  checkAuthentication,
+  deleteProdCarrito
+);
 
 function deleteProdCarrito(req, res) {
   carrito.borrarProd(req.params.id, req.params.id_prod).then(function (result) {
-    res.status(200).send({ message: "producto borrado:", productoId: result });
+    if (result == undefined) {
+      res.status(404).send({ message: "el producto no se ha encontrado" });
+    } else {
+      res
+        .status(200)
+        .send({ message: "producto borrado:", productoId: result });
+    }
   });
 }
 
 function postProdCarrito(req, res) {
   try {
-    carrito.listar(req.params.id).then(function (result) {
-      if (result == undefined) {
-        carrito.guardar(req.body);
-        res.status(200).render("carrito", { contenido });
+    carrito.actualizarProd(req.body, req.params.id).then(function (result) {
+      if (result === undefined) {
+        res.status(404).send({ message: "No se ha podido guardar" });
       } else {
-        carrito.actualizarProd(req.body, req.params.id).then(function (result) {
-          if (result === undefined) {
-            res.status(200).send({ message: "No se ha podido guardar" });
-          } else {
-            res.status(200).render("carrito", { contenido });
-          }
-        });
+        res.status(200).send({ result:result });
       }
     });
   } catch (err) {
@@ -50,7 +53,7 @@ function postProdCarrito(req, res) {
 function deleteCarrito(req, res) {
   carrito.borrar(req.params.id).then(function (result) {
     if (result === undefined) {
-      res.status(200).send({ message: "el carrito no se ha encontrado" });
+      res.status(404).send({ message: "el carrito no se ha encontrado" });
     } else {
       res
         .status(200)
@@ -62,7 +65,7 @@ function postCarrito(req, res) {
   try {
     carrito.guardar(req.body).then(function (result) {
       if (result === undefined) {
-        res.status(200).send({ message: "el id de carrito ya existe" });
+        res.status(400).send({ message: "el id de carrito ya existe" });
       } else {
         res
           .status(200)
@@ -75,12 +78,11 @@ function postCarrito(req, res) {
 }
 function getProdCarrito(req, res) {
   carrito.listar(req.params.id).then(function (result) {
-    if (result === undefined) {
-      res.status(200).render("carrito", { contenido });
+    if (result == undefined) {
+      res.status(404).send({ message: "el carrito no se ha encontrado" });
     } else {
-      contenido = result[0];
-      contenido = contenido.productos;
-      res.status(200).render("carrito", { contenido });
+      console.log(result)
+      res.status(200).send({result:result });
     }
   });
 }

@@ -1,5 +1,6 @@
 import * as modelProd from "../models/productos.js";
 import * as modelCart from "../models/carritos.js";
+import generateId from "./faker.js";
 var hoy = new Date();
 var fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
 var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
@@ -14,7 +15,7 @@ class ContenedorMongo {
         const buscado = await modelProd.productos.find({ id: id }).lean();
         return buscado;
       } else {
-        const buscado = await modelCart.carritos.find({ id: `${id}` }).lean();
+        const buscado = await modelCart.carritos.find({ id: id }).lean();
         return buscado;
       }
     } catch (error) {
@@ -40,7 +41,7 @@ class ContenedorMongo {
     try {
       if (this.ruta === "productos") {
           elem.timestamp = fechaYHora
-          elem.id = elem.nombre
+          elem.id = generateId()
           const e = await new modelProd.productos(elem).save();
           return e;
       } else {
@@ -76,6 +77,9 @@ class ContenedorMongo {
           { id: id },
           { $set: { productos: elem } }
         );
+        if (cartUpdate.modifiedCount == 0){
+         cartUpdate = undefined
+        }
         return cartUpdate;
     
     } catch (error) {
@@ -89,6 +93,9 @@ class ContenedorMongo {
         return elemDelete;
       } else {
         let elemDelete = await modelCart.carritos.deleteOne({ id: id });
+        if(elemDelete.deletedCount == 0){
+          elemDelete = undefined
+        }
         return elemDelete;
       }
     } catch (error) {
