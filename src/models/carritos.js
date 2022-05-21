@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const carritosCollection = "carritos";
 
 const carritoSchema = new mongoose.Schema({
-  id: { type: Number, require: true },
+  id: { type: String, require: true },
   timeStamp: { type: String, require: true },
   productos: [
     {

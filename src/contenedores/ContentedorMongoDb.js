@@ -36,7 +36,7 @@ class ContenedorMongo {
     }
   }
 
-  async guardar(elem) {
+  async guardar(elem,id) {
     
     try {
       if (this.ruta === "productos") {
@@ -45,8 +45,15 @@ class ContenedorMongo {
           const e = await new modelProd.productos(elem).save();
           return e;
       } else {
-        const e = await new modelCart.carritos(elem).save();
-        return e;
+        elem.id = id
+        let buscado = await modelCart.carritos.find({ id: id });
+        if (buscado.length === 0){
+          const e = await new modelCart.carritos(elem).save();
+          return e;
+        }
+        else{
+          return undefined
+        }   
       }
     } catch (error) {
       return undefined;

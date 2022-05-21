@@ -21,6 +21,8 @@ pageRouter.get('/signup', getSignup);
 pageRouter.post('/signup', passport.authenticate('signup', { failureRedirect: '/failsignup' }), postSignup);
 pageRouter.get('/failsignup', getFailsignup);
 pageRouter.get('/logout', getLogout)
+pageRouter.get('/carrito',checkAuthentication,getCart)
+
 //index
 function getRoot(req,res){
     const username = req.user.username
@@ -77,5 +79,7 @@ function getLogout(req,res){
 function failRoute(req,res){
     res.status(404).render('routing-error',{})
 }
-
+function getCart(req,res){
+    res.render('carrito',{})
+}
 export {pageRouter,failRoute}
