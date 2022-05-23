@@ -7,6 +7,7 @@ import carritoApiArchivo from "../daos/carritos/CarritosDaoArchivo.js";
 import CarritosApiFirebase from "../daos/carritos/CarritosDaoFirebase.js";
 import carritosApiMongo from "../daos/carritos/CarritosDaoMongoDb.js";
 import { passport, checkAuthentication } from "./passport.js";
+import {mailUser,mailProductos} from "../contenedores/mail.js"
 let productos = productosApiArchivo
 if(config.DB === "mongo"){
     productos = productosApiMongo
@@ -32,7 +33,7 @@ pageRouter.post('/signup', passport.authenticate('signup', { failureRedirect: '/
 pageRouter.get('/failsignup', getFailsignup);
 pageRouter.get('/logout', getLogout)
 pageRouter.get('/carrito',checkAuthentication,getCart)
-
+pageRouter.post('/carrito',checkAuthentication,postCart)
 //index
 function getRoot(req,res){
     const username = req.user.username
@@ -71,6 +72,7 @@ function postLogin (req, res){
 //PROCESS SIGNUP
 function postSignup (req, res){
     var user = req.body;
+    mailUser(user)
     res.redirect('/')
 }
 function getFaillogin (req,res){
@@ -92,6 +94,12 @@ function failRoute(req,res){
 async function getCart(req,res){
     const username = req.user.username
     contenido = await carrito.listar(req.user.username)
+    res.render('carrito',{username,contenido})
+}
+async function postCart(req,res){
+    const username = req.user
+    contenido = await carrito.listar(req.user.username)
+    mailProductos(username,contenido)
     res.render('carrito',{username,contenido})
 }
 export {pageRouter,failRoute}

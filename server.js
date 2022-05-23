@@ -6,6 +6,7 @@ import carritoApiRouter from "./src/routers/carrito.js";
 import {pageRouter,failRoute} from "./src/routers/page.js";
 import exphbs from 'express-handlebars'
 import {passport} from "./src/routers/passport.js";
+ 
 const app = express()
 
 app.use(session({
