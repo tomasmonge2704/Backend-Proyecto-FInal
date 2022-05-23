@@ -16,7 +16,7 @@ class ContenedorMongo {
         return buscado;
       } else {
         const buscado = await modelCart.carritos.find({ id: id }).lean();
-        return buscado;
+        return buscado[0].productos;
       }
     } catch (error) {
       return undefined;
@@ -80,13 +80,14 @@ class ContenedorMongo {
   }
   async actualizarProd(elem, id) {
     try {
+      console.log(elem)
+      let productos = await modelCart.carritos.find({ id: id }).lean();
+      productos = productos[0].productos
+      productos.push(elem)
         let cartUpdate = await modelCart.carritos.updateOne(
           { id: id },
-          { $set: { productos: elem } }
+          { $set: { productos: productos } }
         );
-        if (cartUpdate.modifiedCount == 0){
-         cartUpdate = undefined
-        }
         return cartUpdate;
     
     } catch (error) {

@@ -20,7 +20,7 @@
     <form action="/user" method="get" style="margin: 10px;">
     <button type="submit" class="btn btn-primary">Mi usuario</button>
     </form>
-    <form action="/api/carrito/{{username}}/productos" method="get" style="margin: 10px;">
+    <form action="/carrito/" method="get" style="margin: 10px;">
     <button type="submit" class="btn btn-light">Carrito</button>
     </form>  
   </div>
@@ -123,8 +123,13 @@ const user = "{{ username }}"
 axios.get(`http://localhost:8080/api/productos/${id}`)
 .then((response) => {
         const elem = response.data[0]
-         console.log(elem)
-        axios.post(`http://localhost:8080/api/carrito/${user}/productos`,elem)
+        axios.post(`http://localhost:8080/api/carrito/${user}/productos`,{
+  nombre:elem.nombre,
+  precio:elem.precio,
+  fotoURL:elem.fotoURL,
+  codigo:elem.codigo,
+  stock:elem.stock
+})
       .then((response) => {
         console.log(response)
     })
