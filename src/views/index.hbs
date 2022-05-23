@@ -87,6 +87,14 @@
                     
     </div>
     <script>
+const user = "{{ username }}"
+axios.post(`http://localhost:8080/api/carrito/`,{})
+.then((response) => {
+        console.log(response)
+    })
+.catch((err) => {
+        console.log(err)
+    });
 function deleteProd(id){
 axios.delete(`http://localhost:8080/api/productos/${id}`)
 .then((response) => {
@@ -119,11 +127,12 @@ axios.post(`http://localhost:8080/api/productos/`,{
 })
 }
 function addToCart(id) {
-const user = "{{ username }}"
+
 axios.get(`http://localhost:8080/api/productos/${id}`)
 .then((response) => {
         const elem = response.data[0]
         axios.post(`http://localhost:8080/api/carrito/${user}/productos`,{
+  id:elem.id,
   nombre:elem.nombre,
   precio:elem.precio,
   fotoURL:elem.fotoURL,

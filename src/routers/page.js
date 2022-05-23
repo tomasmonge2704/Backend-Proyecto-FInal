@@ -3,6 +3,9 @@ import productosApiArchivo from "../daos/productos/ProductosDaoArchivo.js";
 import productosApiMongo from "../daos/productos/ProductosDaoMongoDb.js";
 import productosApiFirebase from "../daos/productos/ProductosDaoFirebase.js";
 import config from "../config.js";
+import carritoApiArchivo from "../daos/carritos/CarritosDaoArchivo.js";
+import CarritosApiFirebase from "../daos/carritos/CarritosDaoFirebase.js";
+import carritosApiMongo from "../daos/carritos/CarritosDaoMongoDb.js";
 import { passport, checkAuthentication } from "./passport.js";
 let productos = productosApiArchivo
 if(config.DB === "mongo"){
@@ -11,6 +14,13 @@ if(config.DB === "mongo"){
 if(config.DB === "firebase"){
     productos = productosApiFirebase
 } 
+let carrito = carritoApiArchivo;
+if (config.DB === "mongo") {
+  carrito = carritosApiMongo;
+}
+if (config.DB === "firebase") {
+  carrito = CarritosApiFirebase;
+}
 let contenido = []
 const pageRouter = new Router();
 pageRouter.get('/', checkAuthentication, getRoot);
@@ -79,7 +89,9 @@ function getLogout(req,res){
 function failRoute(req,res){
     res.status(404).render('routing-error',{})
 }
-function getCart(req,res){
-    res.render('carrito',{})
+async function getCart(req,res){
+    const username = req.user.username
+    contenido = await carrito.listar(req.user.username)
+    res.render('carrito',{username,contenido})
 }
 export {pageRouter,failRoute}

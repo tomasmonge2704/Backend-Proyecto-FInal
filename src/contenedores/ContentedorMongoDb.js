@@ -46,6 +46,7 @@ class ContenedorMongo {
           return e;
       } else {
         elem.id = id
+        elem.timestamp = fechaYHora
         let buscado = await modelCart.carritos.find({ id: id });
         if (buscado.length === 0){
           const e = await new modelCart.carritos(elem).save();
@@ -113,9 +114,9 @@ class ContenedorMongo {
   async borrarProd(id, id_prod) {
     try {
         let buscado = await modelCart.carritos.find({ id: id });
-        buscado = buscado[0].productos.filter((e) => e.id !== parseInt(id_prod))
+        buscado = buscado[0].productos.filter((e) => e.id !== id_prod)
         let cartUpdate = await modelCart.carritos.updateOne(
-            { _id: id },
+            { id: id },
             { $set: { productos: buscado } }
           );
           return cartUpdate;
