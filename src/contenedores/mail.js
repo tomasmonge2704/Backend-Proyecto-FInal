@@ -33,8 +33,6 @@ async function mailUser(elem) {
     }
 }
 async function mailProductos(user, elem) {
-    console.log(elem)
-    console.log(user)
     const mailOptions = {
         from: 'Servidor Node.js',
         to: TEST_MAIL,

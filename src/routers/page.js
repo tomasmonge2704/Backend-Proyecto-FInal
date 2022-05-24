@@ -6,8 +6,9 @@ import config from "../config.js";
 import carritoApiArchivo from "../daos/carritos/CarritosDaoArchivo.js";
 import CarritosApiFirebase from "../daos/carritos/CarritosDaoFirebase.js";
 import carritosApiMongo from "../daos/carritos/CarritosDaoMongoDb.js";
-import { passport, checkAuthentication } from "./passport.js";
+import { passport, checkAuthentication,findUser } from "./passport.js";
 import {mailUser,mailProductos} from "../contenedores/mail.js"
+import twilioo from "../contenedores/twilio.js"
 let productos = productosApiArchivo
 if(config.DB === "mongo"){
     productos = productosApiMongo
@@ -34,6 +35,7 @@ pageRouter.get('/failsignup', getFailsignup);
 pageRouter.get('/logout', getLogout)
 pageRouter.get('/carrito',checkAuthentication,getCart)
 pageRouter.post('/carrito',checkAuthentication,postCart)
+pageRouter.get('/user',checkAuthentication,getUser)
 //index
 function getRoot(req,res){
     const username = req.user.username
@@ -97,9 +99,15 @@ async function getCart(req,res){
     res.render('carrito',{username,contenido})
 }
 async function postCart(req,res){
-    const username = req.user
-    contenido = await carrito.listar(req.user.username)
+    const username =  req.user
+    let user = await findUser(username.username)
+    contenido = await carrito.listar(username.username)
     mailProductos(username,contenido)
-    res.render('carrito',{username,contenido})
+    twilioo(user.telefono)
+    res.status(200).render('compra-exitosa',{})
+}
+async function getUser(req,res){
+    let user = await findUser(req.user.username)
+    res.render('user',{user})
 }
 export {pageRouter,failRoute}

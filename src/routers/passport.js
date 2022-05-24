@@ -28,7 +28,7 @@ const User = mongoose.model(
     nombre: String,
     apellido: String,
     edad: String,
-    telefono:String
+    telefono: String
   })
 );
 //mongo fin
@@ -82,7 +82,7 @@ passport.use(
           nombre: req.body.nombre,
           apellido: req.body.apellido,
           edad: req.body.edad,
-          telefono:req.body.telefono
+          telefono: req.body.telefono
         };
         User.create(newUser, (err, userWithId) => {
           if (err) {
@@ -115,6 +115,10 @@ function checkAuthentication(req, res, next) {
     res.status(401).render("login");
   }
 }
+function findUser(username) {
+  let user = User.findOne({ username: username }).lean()
+  return user
+}
 //fin passport
 
-export { passport, checkAuthentication };
+export { passport, checkAuthentication, findUser };
