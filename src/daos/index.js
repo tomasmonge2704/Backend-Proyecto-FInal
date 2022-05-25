@@ -18,7 +18,6 @@ async function InitMongo() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("base de datos conectada");
   } catch (error) {
     console.log(`Error en CRUD: ${error}`);
   }

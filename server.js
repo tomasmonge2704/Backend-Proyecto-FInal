@@ -39,7 +39,7 @@ app.use("/api/productos", productosApiRouter)
 app.use("/api/carrito", carritoApiRouter)
 app.use("/",pageRouter)
 app.get('*', failRoute);
-
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
 const connectedServer = app.listen(config.PORT, () => {
     console.log(`Servidor escuchando en el puerto ${config.PORT}`)
 })
