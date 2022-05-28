@@ -1,12 +1,11 @@
 import express from "express";
 import session from "express-session"
 import config from "./src/config.js";
-import productosApiRouter from "./src/routers/productos.js";
-import carritoApiRouter from "./src/routers/carrito.js";
+import {productosApiRouter} from "./src/routers/productos.js";
+import {carritoApiRouter} from "./src/routers/carrito.js";
 import {pageRouter,failRoute} from "./src/routers/page.js";
 import exphbs from 'express-handlebars'
 import {passport} from "./src/routers/passport.js";
- 
 const app = express()
 
 app.use(session({
@@ -34,11 +33,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
 app.use("/api/productos", productosApiRouter)
 app.use("/api/carrito", carritoApiRouter)
 app.use("/",pageRouter)
 app.get('*', failRoute);
+
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
 const connectedServer = app.listen(config.PORT, () => {
     console.log(`Servidor escuchando en el puerto ${config.PORT}`)

@@ -79,4 +79,4 @@ function getProductos(req, res) {
   }
 }
 
-export default productosApiRouter;
+export {productos,productosApiRouter};

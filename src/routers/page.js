@@ -1,28 +1,11 @@
 import { Router } from "express";
-import productosApiArchivo from "../daos/productos/ProductosDaoArchivo.js";
-import productosApiMongo from "../daos/productos/ProductosDaoMongoDb.js";
-import productosApiFirebase from "../daos/productos/ProductosDaoFirebase.js";
+import { productos } from "./productos.js";
+import { carrito } from "./carrito.js";
 import config from "../config.js";
-import carritoApiArchivo from "../daos/carritos/CarritosDaoArchivo.js";
-import CarritosApiFirebase from "../daos/carritos/CarritosDaoFirebase.js";
-import carritosApiMongo from "../daos/carritos/CarritosDaoMongoDb.js";
 import { passport, checkAuthentication,findUser } from "./passport.js";
 import {mailUser,mailProductos} from "../contenedores/mail.js"
 import twilioo from "../contenedores/twilio.js"
-let productos = productosApiArchivo
-if(config.DB === "mongo"){
-    productos = productosApiMongo
-}
-if(config.DB === "firebase"){
-    productos = productosApiFirebase
-} 
-let carrito = carritoApiArchivo;
-if (config.DB === "mongo") {
-  carrito = carritosApiMongo;
-}
-if (config.DB === "firebase") {
-  carrito = CarritosApiFirebase;
-}
+
 let contenido = []
 const pageRouter = new Router();
 pageRouter.get('/', checkAuthentication, getRoot);
@@ -34,7 +17,7 @@ pageRouter.post('/signup', passport.authenticate('signup', { failureRedirect: '/
 pageRouter.get('/failsignup', getFailsignup);
 pageRouter.get('/logout', getLogout)
 pageRouter.get('/carrito',checkAuthentication,getCart)
-pageRouter.post('/carrito',checkAuthentication,postCart)
+pageRouter.delete('/carrito',checkAuthentication,postCart)
 pageRouter.get('/user',checkAuthentication,getUser)
 //index
 function getRoot(req,res){
@@ -104,7 +87,8 @@ async function postCart(req,res){
     contenido = await carrito.listar(username.username)
     mailProductos(username,contenido)
     twilioo(user.telefono)
-    res.status(200).render('compra-exitosa',{})
+    carrito.borrar(username.username)
+    res.status(200).send('compra exitosa')
 }
 async function getUser(req,res){
     let user = await findUser(req.user.username)
