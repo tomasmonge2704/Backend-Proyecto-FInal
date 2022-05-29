@@ -17,7 +17,7 @@ pageRouter.post('/signup', passport.authenticate('signup', { failureRedirect: '/
 pageRouter.get('/failsignup', getFailsignup);
 pageRouter.get('/logout', getLogout)
 pageRouter.get('/carrito',checkAuthentication,getCart)
-pageRouter.delete('/carrito',checkAuthentication,postCart)
+pageRouter.post('/carrito',checkAuthentication,postCart)
 pageRouter.get('/user',checkAuthentication,getUser)
 //index
 function getRoot(req,res){
@@ -88,7 +88,7 @@ async function postCart(req,res){
     mailProductos(username,contenido)
     twilioo(user.telefono)
     carrito.borrar(username.username)
-    res.status(200).send('compra exitosa')
+    res.status(200).render('exitosa')
 }
 async function getUser(req,res){
     let user = await findUser(req.user.username)
