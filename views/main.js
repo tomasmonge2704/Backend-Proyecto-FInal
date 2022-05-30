@@ -1,6 +1,7 @@
 function deleteProd(id){
 axios.delete(`http://localhost:8080/api/productos/${id}`)
 .then((response) => {
+    location.reload();
     console.log(response)
 })
 .catch((err)=>{
@@ -24,6 +25,7 @@ axios.post(`http://localhost:8080/api/productos/`,{
 })
 .then((response) => {
     console.log(response)
+    location.reload();
 })
 .catch((err)=>{
     console.log(err)

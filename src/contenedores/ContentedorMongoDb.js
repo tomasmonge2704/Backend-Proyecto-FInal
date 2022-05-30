@@ -81,15 +81,19 @@ class ContenedorMongo {
   }
   async actualizarProd(elem, id) {
     try {
-      console.log(elem)
-      let productos = await modelCart.carritos.find({ id: id }).lean();
-      productos = productos[0].productos
-      productos.push(elem)
-        let cartUpdate = await modelCart.carritos.updateOne(
-          { id: id },
-          { $set: { productos: productos } }
-        );
-        return cartUpdate;
+      let productos = await this.listar(id);
+      if (productos == undefined){
+        const e = new modelCart.carritos({id:id,timestamp:fechaYHora,productos:elem}).save();
+        return e
+      }else{
+        productos.push(elem)
+          let cartUpdate = await modelCart.carritos.updateOne(
+            { id: id },
+            { $set: { productos: productos } }
+          );
+          return cartUpdate;
+      }
+      
     
     } catch (error) {
       return undefined;

@@ -3,7 +3,7 @@ import { productos } from "./productos.js";
 import { carrito } from "./carrito.js";
 import { passport, checkAuthentication,findUser } from "./passport.js";
 import {mailUser,mailProductos} from "../utils/mail.js"
-import twilioo from "../utils/twilio.js"
+import {twilioSMS,twilioWPP} from "../utils/twilio.js"
 
 let contenido = []
 const pageRouter = new Router();
@@ -57,6 +57,7 @@ function postLogin (req, res){
 function postSignup (req, res){
     var user = req.body;
     mailUser(user)
+    twilioWPP(user.telefono)
     res.redirect('/')
 }
 function getFaillogin (req,res){
@@ -85,7 +86,7 @@ async function postCart(req,res){
     let user = await findUser(username.username)
     contenido = await carrito.listar(username.username)
     mailProductos(username,contenido)
-    twilioo(user.telefono)
+    twilioSMS(user.telefono)
     carrito.borrar(username.username)
     res.status(200).render('exitosa')
 }
