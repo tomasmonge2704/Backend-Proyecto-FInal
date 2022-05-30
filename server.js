@@ -6,14 +6,12 @@ import {carritoApiRouter} from "./src/routers/carrito.js";
 import {pageRouter,failRoute} from "./src/routers/page.js";
 import exphbs from 'express-handlebars'
 import {passport} from "./src/routers/passport.js";
+import __dirname from "./src/utils/__dirname.js";
 const app = express()
 
-import path from 'path';
-import {fileURLToPath} from 'url';
 let arrProductos = []
 arrProductos = productos.listarAll()
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
 app.use(session({
     secret: 'keyboard cat',
     cookie: {

@@ -1,10 +1,9 @@
 import { Router } from "express";
 import { productos } from "./productos.js";
 import { carrito } from "./carrito.js";
-import config from "../config.js";
 import { passport, checkAuthentication,findUser } from "./passport.js";
-import {mailUser,mailProductos} from "../contenedores/mail.js"
-import twilioo from "../contenedores/twilio.js"
+import {mailUser,mailProductos} from "../utils/mail.js"
+import twilioo from "../utils/twilio.js"
 
 let contenido = []
 const pageRouter = new Router();

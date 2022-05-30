@@ -41,7 +41,14 @@ function postProdCarrito(req, res) {
   try {
     carrito.actualizarProd(req.body, req.params.id).then(function (result) {
       if (result === undefined) {
-        res.status(404).send({ message: "No se ha podido guardar" });
+        carrito.guardar(req.body, req.user.username)
+        if (result === undefined) {
+          res.status(400).send({ message: "el id de carrito ya existe" });
+        } else {
+          res
+            .status(200)
+            .send({ message: "el carrito se ha creado", carrito: result });
+        }
       } else {
         res.status(200).send({ result: result });
       }
