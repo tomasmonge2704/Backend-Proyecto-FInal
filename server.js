@@ -8,6 +8,9 @@ import exphbs from 'express-handlebars'
 import { passport } from "./src/routers/passport.js";
 import __dirname from "./src/utils/__dirname.js";
 import {loggerTodos} from "./src/utils/log4js.js";
+import os from 'os'
+import cluster from 'cluster'
+const numCPUs = os.cpus().length;
 const app = express()
 
 let arrProductos = []
@@ -44,8 +47,22 @@ app.get('*', failRoute);
 
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
-const connectedServer = app.listen(config.PORT, () => {
-    loggerTodos.info(`Servidor escuchando en el puerto ${config.PORT}`)
-})
-connectedServer.on('error', error => loggerTodos.fatal(`Error en el servidor ${error}`))
+
+if (cluster.isMaster && config.CLUSTER == "on" ){
+    console.log(`Master ${process.pid} is running`)
+    for (let i = 0; i < numCPUs; i++){
+        cluster.fork();
+    }
+    cluster.on('exit',(worker,code,signal)=>{
+        console.log(`worker ${worker.process.pid} died`)
+        cluster.fork()
+    })
+
+}else{
+    const connectedServer = app.listen(config.PORT, () => {
+        loggerTodos.info(`Servidor escuchando en el puerto ${config.PORT}- PID WORKER ${process.pid}`)
+    })
+    connectedServer.on('error', error => loggerTodos.fatal(`Error en el servidor ${error}`))
+}
+
 

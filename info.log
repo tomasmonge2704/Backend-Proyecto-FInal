@@ -15,3 +15,65 @@
 }
 [2022-05-31T14:04:37.326] [INFO] todos - Servidor escuchando en el puerto 8080
 [2022-05-31T14:04:44.250] [ERROR] todos - actualizar token de twilio!Error: Authenticate
+[2022-05-31T15:18:53.846] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:18:53.866] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:18:53.870] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:18:53.878] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:18:53.905] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:18:53.935] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:18:53.975] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:18:53.986] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:18:54.014] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:18:54.014] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:18:54.036] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:18:54.116] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.516] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.534] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.658] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.678] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.750] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.752] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.763] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.785] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.788] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.808] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.821] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:37:28.832] [INFO] todos - Servidor escuchando en el puerto 8080
+[2022-05-31T15:39:54.101] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 94548
+[2022-05-31T15:39:54.166] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 46592
+[2022-05-31T15:39:54.181] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 99980
+[2022-05-31T15:39:54.245] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101708
+[2022-05-31T15:39:54.356] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 95548
+[2022-05-31T15:39:54.358] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 99712
+[2022-05-31T15:39:54.367] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 97156
+[2022-05-31T15:39:54.376] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96544
+[2022-05-31T15:39:54.389] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 93484
+[2022-05-31T15:39:54.400] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 37124
+[2022-05-31T15:39:54.402] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 100176
+[2022-05-31T15:39:54.413] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96276
+[2022-05-31T15:42:41.127] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 33928
+[2022-05-31T16:34:38.957] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96964
+[2022-05-31T16:38:50.256] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 95924
+[2022-05-31T16:38:50.325] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 44208
+[2022-05-31T16:38:50.330] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25124
+[2022-05-31T16:38:50.368] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101892
+[2022-05-31T16:38:50.377] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 100480
+[2022-05-31T16:38:50.399] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 97772
+[2022-05-31T16:38:50.434] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 47780
+[2022-05-31T16:38:50.437] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101980
+[2022-05-31T16:38:50.453] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 103084
+[2022-05-31T16:38:50.458] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96688
+[2022-05-31T16:38:50.481] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 76396
+[2022-05-31T16:38:50.510] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 99352
+[2022-05-31T16:40:18.675] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 94880
+[2022-05-31T16:40:18.768] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101164
+[2022-05-31T16:40:18.781] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 84016
+[2022-05-31T16:40:18.782] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101796
+[2022-05-31T16:40:18.782] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 100768
+[2022-05-31T16:40:18.800] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 94404
+[2022-05-31T16:40:18.817] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 97396
+[2022-05-31T16:40:18.831] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 94444
+[2022-05-31T16:40:18.843] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101528
+[2022-05-31T16:40:18.846] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 103324
+[2022-05-31T16:40:18.854] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 89804
+[2022-05-31T16:40:18.890] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 103360
