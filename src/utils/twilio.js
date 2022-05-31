@@ -1,7 +1,7 @@
 import twilio from 'twilio'
 import { loggerTodos } from './log4js.js'
 const accountSid = 'AC33630fd76eb219c5d519973ae212803f'
-const authToken = '96f659bd254e1c6e8e15fa8f7820c7ad'
+const authToken = '99ef41f4e805e440c4728aed5c51d40a'
 
 const client = twilio(accountSid, authToken)
 

@@ -73,7 +73,6 @@ passport.use(
         }
 
         if (user) {
-          console.log("User already exists");
           return done(null, false);
         }
         const newUser = {
@@ -90,7 +89,6 @@ passport.use(
             console.log("Error in Saving user: " + err);
             return done(err);
           }
-          console.log("User Registration succesful");
           return done(null, userWithId);
         });
       });

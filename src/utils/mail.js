@@ -1,5 +1,5 @@
 import nodemailer, { createTransport } from 'nodemailer';
-
+import { loggerTodos } from './log4js.js';
 const TEST_MAIL = 'tomas.monge.vidal@gmail.com'
 
 const transporter = nodemailer.createTransport({
@@ -27,9 +27,9 @@ async function mailUser(elem) {
     }
     try {
         const info = await transporter.sendMail(mailOptions)
-        console.log(info)
+        loggerTodos.info(info)
     } catch (error) {
-        console.log(error)
+        loggerTodos.error(error)
     }
 }
 async function mailProductos(user, elem) {
@@ -44,9 +44,9 @@ async function mailProductos(user, elem) {
     }
     try {
         const info = await transporter.sendMail(mailOptions)
-        console.log(info)
+        loggerTodos.info(info)
     } catch (error) {
-        console.log(error)
+        loggerTodos.error(error)
     }
 }
 export { mailUser, mailProductos }

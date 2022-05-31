@@ -1,5 +1,16 @@
-[2022-05-31T14:01:26.277] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T14:02:38.805] [ERROR] todos - RestException [Error]: Authenticate
+[2022-05-31T17:26:52.416] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 99892
+[2022-05-31T17:26:52.454] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101180
+[2022-05-31T17:26:52.490] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 100028
+[2022-05-31T17:26:52.514] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96352
+[2022-05-31T17:26:52.543] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 104384
+[2022-05-31T17:26:52.565] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96196
+[2022-05-31T17:26:52.598] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 97520
+[2022-05-31T17:26:52.605] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 99524
+[2022-05-31T17:26:52.669] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 104372
+[2022-05-31T17:26:52.729] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 103664
+[2022-05-31T17:26:52.786] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 91576
+[2022-05-31T17:26:52.844] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96064
+[2022-05-31T17:28:28.970] [ERROR] todos - Error: Twilio could not find a Channel with the specified From address
     at success (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\twilio\lib\base\Version.js:135:15)
     at Promise_then_fulfilled (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:766:44)
     at Promise_done_fulfilled (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:835:31)
@@ -8,72 +19,86 @@
     at RawTask.call (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\asap\asap.js:40:19)
     at flush (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\asap\raw.js:50:29)
     at processTicksAndRejections (node:internal/process/task_queues:78:11) {
-  status: 401,
-  code: 20003,
-  moreInfo: 'https://www.twilio.com/docs/errors/20003',
-  details: undefined
+  status: 400,
+  code: 63007,
+  moreInfo: 'https://www.twilio.com/docs/errors/63007',
+  details: 'undefined'
 }
-[2022-05-31T14:04:37.326] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T14:04:44.250] [ERROR] todos - actualizar token de twilio!Error: Authenticate
-[2022-05-31T15:18:53.846] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:18:53.866] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:18:53.870] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:18:53.878] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:18:53.905] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:18:53.935] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:18:53.975] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:18:53.986] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:18:54.014] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:18:54.014] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:18:54.036] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:18:54.116] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.516] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.534] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.658] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.678] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.750] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.752] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.763] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.785] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.788] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.808] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.821] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:37:28.832] [INFO] todos - Servidor escuchando en el puerto 8080
-[2022-05-31T15:39:54.101] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 94548
-[2022-05-31T15:39:54.166] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 46592
-[2022-05-31T15:39:54.181] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 99980
-[2022-05-31T15:39:54.245] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101708
-[2022-05-31T15:39:54.356] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 95548
-[2022-05-31T15:39:54.358] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 99712
-[2022-05-31T15:39:54.367] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 97156
-[2022-05-31T15:39:54.376] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96544
-[2022-05-31T15:39:54.389] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 93484
-[2022-05-31T15:39:54.400] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 37124
-[2022-05-31T15:39:54.402] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 100176
-[2022-05-31T15:39:54.413] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96276
-[2022-05-31T15:42:41.127] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 33928
-[2022-05-31T16:34:38.957] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96964
-[2022-05-31T16:38:50.256] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 95924
-[2022-05-31T16:38:50.325] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 44208
-[2022-05-31T16:38:50.330] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25124
-[2022-05-31T16:38:50.368] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101892
-[2022-05-31T16:38:50.377] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 100480
-[2022-05-31T16:38:50.399] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 97772
-[2022-05-31T16:38:50.434] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 47780
-[2022-05-31T16:38:50.437] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101980
-[2022-05-31T16:38:50.453] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 103084
-[2022-05-31T16:38:50.458] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96688
-[2022-05-31T16:38:50.481] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 76396
-[2022-05-31T16:38:50.510] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 99352
-[2022-05-31T16:40:18.675] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 94880
-[2022-05-31T16:40:18.768] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101164
-[2022-05-31T16:40:18.781] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 84016
-[2022-05-31T16:40:18.782] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101796
-[2022-05-31T16:40:18.782] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 100768
-[2022-05-31T16:40:18.800] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 94404
-[2022-05-31T16:40:18.817] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 97396
-[2022-05-31T16:40:18.831] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 94444
-[2022-05-31T16:40:18.843] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101528
-[2022-05-31T16:40:18.846] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 103324
-[2022-05-31T16:40:18.854] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 89804
-[2022-05-31T16:40:18.890] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 103360
+[2022-05-31T17:28:30.459] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 650,
+  messageTime: 737,
+  messageSize: 955,
+  response: '250 2.0.0 OK  1654028911 z3-20020a056870d68300b000f24edeaf40sm3761983oap.45 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<4f1ecc2c-2a5a-8787-b1f1-3a67220de7eb@DESKTOP-699EI6L>'
+}
+[2022-05-31T17:30:00.166] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 650,
+  messageTime: 628,
+  messageSize: 659,
+  response: '250 2.0.0 OK  1654029001 ho5-20020a056870498500b000f324b1e645sm4065701oab.22 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<01136edf-a428-cdcf-c447-8d2f361e4a22@DESKTOP-699EI6L>'
+}
+[2022-05-31T17:37:33.749] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96380
+[2022-05-31T17:37:33.769] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 83060
+[2022-05-31T17:37:33.785] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 97348
+[2022-05-31T17:37:33.844] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 80168
+[2022-05-31T17:37:33.860] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 15652
+[2022-05-31T17:37:33.884] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 95828
+[2022-05-31T17:37:34.106] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 79056
+[2022-05-31T17:37:34.114] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 97060
+[2022-05-31T17:37:34.185] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 72792
+[2022-05-31T17:37:34.235] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 104172
+[2022-05-31T17:37:34.262] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 96512
+[2022-05-31T17:37:34.284] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 100192
+[2022-05-31T17:40:59.745] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 105124
+[2022-05-31T17:40:59.838] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 97600
+[2022-05-31T17:40:59.843] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 84904
+[2022-05-31T17:40:59.855] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 9236
+[2022-05-31T17:40:59.918] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 100048
+[2022-05-31T17:40:59.961] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 104576
+[2022-05-31T17:41:00.058] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101380
+[2022-05-31T17:41:00.089] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 102064
+[2022-05-31T17:41:00.172] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 103492
+[2022-05-31T17:41:00.208] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 37036
+[2022-05-31T17:41:00.224] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 101128
+[2022-05-31T17:41:00.328] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 102024
+[2022-05-31T17:42:24.351] [ERROR] todos - Error: Twilio could not find a Channel with the specified From address
+    at success (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 400,
+  code: 63007,
+  moreInfo: 'https://www.twilio.com/docs/errors/63007',
+  details: 'undefined'
+}
+[2022-05-31T17:42:25.734] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 698,
+  messageTime: 637,
+  messageSize: 955,
+  response: '250 2.0.0 OK  1654029746 q11-20020a4ab3cb000000b0035eb4e5a6bfsm6504392ooo.21 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<74febaed-7cad-5f6d-0394-eaffd5a48c69@DESKTOP-699EI6L>'
+}
+[2022-05-31T17:44:58.651] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 639,
+  messageTime: 662,
+  messageSize: 659,
+  response: '250 2.0.0 OK  1654029899 w12-20020a056830410c00b0060b0c4704fasm6710923ott.4 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<606c7801-26f6-a181-a3c1-a3f7341178f7@DESKTOP-699EI6L>'
+}

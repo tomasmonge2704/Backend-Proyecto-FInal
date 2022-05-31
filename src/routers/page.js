@@ -4,7 +4,7 @@ import { carrito } from "./carrito.js";
 import { passport, checkAuthentication,findUser } from "./passport.js";
 import {mailUser,mailProductos} from "../utils/mail.js"
 import {twilioSMS,twilioWPP} from "../utils/twilio.js"
-
+import {loggerTodos} from "../utils/log4js.js"
 let contenido = []
 const pageRouter = new Router();
 pageRouter.get('/', checkAuthentication, getRoot);
@@ -65,7 +65,7 @@ function getFaillogin (req,res){
     res.render('login-error',{});
 }
 function getFailsignup(req,res){
-    console.log('error en signup');
+    loggerTodos.error("error en signup, el usuario ya existe")
     res.render('signup-error',{})
 }
 //LOGOUT
