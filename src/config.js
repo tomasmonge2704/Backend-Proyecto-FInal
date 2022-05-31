@@ -3,6 +3,6 @@ export default {
     DB:"mongo"
     //mongo o firebase
     ,
-    CLUSTER:"on"
+    CLUSTER:"no"
     //on
 }
