@@ -1,4 +1,5 @@
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
+import { loggerConsola } from "../utils/log4js.js";
 const require = createRequire(import.meta.url); // construct the require method
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
@@ -14,7 +15,7 @@ const connectionParams = {
 mongoose
   .connect(url, connectionParams)
   .then(() => {
-    console.log("Connected to the database ");
+    loggerConsola.info("passport.js|Connected to the database ");
   })
   .catch((err) => {
     console.error(`Error connecting to the database. n${err}`);

@@ -1,5 +1,5 @@
 import twilio from 'twilio'
-
+import { loggerTodos } from './log4js.js'
 const accountSid = 'AC33630fd76eb219c5d519973ae212803f'
 const authToken = '96f659bd254e1c6e8e15fa8f7820c7ad'
 
@@ -13,7 +13,7 @@ async function twilioSMS(telefono){
             to: telefono
         })
      } catch (error) {
-        console.log(error)
+        loggerTodos.error("actualizar token de twilio!" + error)
      }
 }
 async function twilioWPP(telefono){
@@ -26,7 +26,7 @@ async function twilioWPP(telefono){
          }
          )
      } catch (error) {
-        console.log(error)
+        loggerTodos.error(error)
      }
 }
 
