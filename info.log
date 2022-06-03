@@ -103,3 +103,497 @@
   messageId: '<606c7801-26f6-a181-a3c1-a3f7341178f7@DESKTOP-699EI6L>'
 }
 [2022-05-31T17:56:17.323] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 98028
+[2022-06-03T17:52:42.300] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 4364
+[2022-06-03T17:52:42.300] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 21204
+[2022-06-03T17:52:42.312] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25040
+[2022-06-03T17:52:42.312] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30892
+[2022-06-03T17:52:42.337] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 31344
+[2022-06-03T17:52:42.338] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 22516
+[2022-06-03T17:52:42.394] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 7032
+[2022-06-03T17:52:42.404] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 3844
+[2022-06-03T17:52:42.409] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30080
+[2022-06-03T17:52:42.412] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 8988
+[2022-06-03T17:52:42.428] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32640
+[2022-06-03T17:52:42.469] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 18596
+[2022-06-03T17:53:21.415] [ERROR] todos - Error: Twilio could not find a Channel with the specified From address
+    at success (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 400,
+  code: 63007,
+  moreInfo: 'https://www.twilio.com/docs/errors/63007',
+  details: 'undefined'
+}
+[2022-06-03T17:53:25.185] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 917,
+  messageTime: 1367,
+  messageSize: 647,
+  response: '250 2.0.0 OK  1654289605 g22-20020ac870d6000000b00304e0245d88sm1486777qtp.48 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<c4ec71d4-ae59-4df9-3903-ad6add80fac7@DESKTOP-699EI6L>'
+}
+[2022-06-03T17:58:08.087] [ERROR] todos - Error: Twilio could not find a Channel with the specified From address
+    at success (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 400,
+  code: 63007,
+  moreInfo: 'https://www.twilio.com/docs/errors/63007',
+  details: 'undefined'
+}
+[2022-06-03T17:58:09.429] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 539,
+  messageTime: 960,
+  messageSize: 647,
+  response: '250 2.0.0 OK  1654289889 d16-20020ac81190000000b002f93ece0df3sm5026104qtj.71 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<05734680-7dbf-bb79-3a30-74447f3a5b70@DESKTOP-699EI6L>'
+}
+[2022-06-03T18:02:00.097] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30576
+[2022-06-03T18:02:00.114] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 3692
+[2022-06-03T18:02:00.132] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 14108
+[2022-06-03T18:02:00.189] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30648
+[2022-06-03T18:02:00.196] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 2440
+[2022-06-03T18:02:00.215] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 26276
+[2022-06-03T18:02:00.225] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 3284
+[2022-06-03T18:02:00.228] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 17628
+[2022-06-03T18:02:00.228] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 16044
+[2022-06-03T18:02:00.230] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 26468
+[2022-06-03T18:02:00.248] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30932
+[2022-06-03T18:02:00.253] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 19512
+[2022-06-03T18:02:17.575] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 548,
+  messageTime: 733,
+  messageSize: 647,
+  response: '250 2.0.0 OK  1654290137 ca27-20020a05622a1f1b00b00304e43ac0a5sm471073qtb.79 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<b2e1a3a1-5a8c-a82d-bedc-60de7459640f@DESKTOP-699EI6L>'
+}
+[2022-06-03T18:05:01.353] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 616,
+  messageTime: 875,
+  messageSize: 647,
+  response: '250 2.0.0 OK  1654290301 h20-20020a379e14000000b006a349bfcb02sm5591127qke.41 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<68529a56-c3bb-9443-6e97-5049c140e9e6@DESKTOP-699EI6L>'
+}
+[2022-06-03T18:34:56.883] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 31228
+[2022-06-03T18:34:56.886] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29532
+[2022-06-03T18:34:56.905] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29112
+[2022-06-03T18:34:56.955] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 28712
+[2022-06-03T18:34:56.954] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 2032
+[2022-06-03T18:34:56.996] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25248
+[2022-06-03T18:34:57.025] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 1824
+[2022-06-03T18:34:57.026] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 10772
+[2022-06-03T18:34:57.038] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25480
+[2022-06-03T18:34:57.081] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32700
+[2022-06-03T18:34:57.085] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 7444
+[2022-06-03T18:34:57.090] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 9704
+[2022-06-03T18:35:07.672] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 689,
+  messageTime: 1058,
+  messageSize: 647,
+  response: '250 2.0.0 OK  1654292107 e5-20020ac81305000000b00304e38fb3dasm763169qtj.35 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<9b3f57c6-99f3-ea37-c2cf-d5acd0a91a9c@DESKTOP-699EI6L>'
+}
+[2022-06-03T18:38:46.262] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 18400
+[2022-06-03T18:38:46.316] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 13952
+[2022-06-03T18:38:46.322] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 1316
+[2022-06-03T18:38:46.329] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 20056
+[2022-06-03T18:38:46.339] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 27276
+[2022-06-03T18:38:46.367] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 23564
+[2022-06-03T18:38:46.389] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 21016
+[2022-06-03T18:38:46.419] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 16016
+[2022-06-03T18:38:46.423] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 22800
+[2022-06-03T18:38:46.431] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 9824
+[2022-06-03T18:38:46.432] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32516
+[2022-06-03T18:38:46.470] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29256
+[2022-06-03T18:38:55.458] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 553,
+  messageTime: 706,
+  messageSize: 647,
+  response: '250 2.0.0 OK  1654292335 bm38-20020a05620a19a600b006a6941cc9e5sm2493831qkb.42 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<ba0bbc33-da62-ddb7-d765-1f1c363e56b9@DESKTOP-699EI6L>'
+}
+[2022-06-03T18:41:03.594] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25896
+[2022-06-03T18:41:03.596] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29228
+[2022-06-03T18:41:03.624] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 27764
+[2022-06-03T18:41:03.667] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 3564
+[2022-06-03T18:41:03.683] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32048
+[2022-06-03T18:41:03.705] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 4468
+[2022-06-03T18:41:03.719] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 26508
+[2022-06-03T18:41:03.721] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 21776
+[2022-06-03T18:41:03.731] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 1012
+[2022-06-03T18:41:03.736] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 28636
+[2022-06-03T18:41:03.747] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 24508
+[2022-06-03T18:41:03.757] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 23416
+[2022-06-03T18:41:30.053] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 548,
+  messageTime: 855,
+  messageSize: 647,
+  response: '250 2.0.0 OK  1654292490 o16-20020a05620a131000b006a34a22bc60sm5499003qkj.9 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<e1d97bdc-d761-023c-a41a-3591d8760cb6@DESKTOP-699EI6L>'
+}
+[2022-06-03T18:43:36.192] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29856
+[2022-06-03T18:43:36.193] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25072
+[2022-06-03T18:43:36.197] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 1740
+[2022-06-03T18:43:36.214] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 18392
+[2022-06-03T18:43:36.233] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 21816
+[2022-06-03T18:43:36.236] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 17324
+[2022-06-03T18:43:36.248] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29896
+[2022-06-03T18:43:36.248] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 10900
+[2022-06-03T18:43:36.264] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 27224
+[2022-06-03T18:43:36.268] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25116
+[2022-06-03T18:43:36.298] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 14716
+[2022-06-03T18:43:36.349] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 9916
+[2022-06-03T18:43:50.458] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 1697,
+  messageTime: 1082,
+  messageSize: 647,
+  response: '250 2.0.0 OK  1654292630 x22-20020ac84a16000000b00304c5a2e430sm5129635qtq.77 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<a105b3a2-ae82-fdf2-1be6-b3a5e6597fde@DESKTOP-699EI6L>'
+}
+[2022-06-03T18:59:25.539] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 14424
+[2022-06-03T18:59:25.631] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 26260
+[2022-06-03T18:59:25.646] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32752
+[2022-06-03T18:59:25.673] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 11568
+[2022-06-03T18:59:25.699] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 7988
+[2022-06-03T18:59:25.708] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 27784
+[2022-06-03T18:59:25.716] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30872
+[2022-06-03T18:59:25.731] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 11868
+[2022-06-03T18:59:25.782] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 28960
+[2022-06-03T18:59:25.782] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 8516
+[2022-06-03T18:59:25.829] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 21924
+[2022-06-03T18:59:25.836] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25344
+[2022-06-03T18:59:35.925] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 574,
+  messageTime: 845,
+  messageSize: 647,
+  response: '250 2.0.0 OK  1654293575 w11-20020ac8718b000000b002fb673aa50asm5202498qto.89 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<75f5017e-b39e-9735-6fca-18b7efba6bb0@DESKTOP-699EI6L>'
+}
+[2022-06-03T19:01:09.374] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 18108
+[2022-06-03T19:01:09.377] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 8852
+[2022-06-03T19:01:09.386] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 31052
+[2022-06-03T19:01:09.400] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 24544
+[2022-06-03T19:01:09.418] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 27156
+[2022-06-03T19:01:09.420] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 13256
+[2022-06-03T19:01:09.422] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32308
+[2022-06-03T19:01:09.428] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 16004
+[2022-06-03T19:01:09.455] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 28772
+[2022-06-03T19:01:09.462] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 18756
+[2022-06-03T19:01:09.499] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 28932
+[2022-06-03T19:01:09.539] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 18248
+[2022-06-03T19:01:24.060] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 568,
+  messageTime: 687,
+  messageSize: 647,
+  response: '250 2.0.0 OK  1654293684 h66-20020a37b745000000b006a2f5ea4a29sm5897546qkf.46 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<12997366-9552-fbd1-e424-bfc520b2d3a6@DESKTOP-699EI6L>'
+}
+[2022-06-03T19:04:01.661] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 2488
+[2022-06-03T19:04:01.671] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 27968
+[2022-06-03T19:04:01.705] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30508
+[2022-06-03T19:04:01.721] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29608
+[2022-06-03T19:04:01.780] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 18800
+[2022-06-03T19:04:01.780] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 31864
+[2022-06-03T19:04:01.853] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 23004
+[2022-06-03T19:04:01.857] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 18940
+[2022-06-03T19:04:01.856] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30856
+[2022-06-03T19:04:01.858] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29672
+[2022-06-03T19:04:01.866] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 27600
+[2022-06-03T19:04:01.886] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 11900
+[2022-06-03T19:04:33.858] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 558,
+  messageTime: 728,
+  messageSize: 647,
+  response: '250 2.0.0 OK  1654293873 m3-20020a375803000000b006a3696c4739sm5982145qkb.19 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<3a27c183-7f65-fbd9-6ef0-dc1a67d21b86@DESKTOP-699EI6L>'
+}
+[2022-06-03T19:07:44.720] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 23208
+[2022-06-03T19:07:44.720] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 21344
+[2022-06-03T19:07:44.731] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29968
+[2022-06-03T19:07:44.754] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 1580
+[2022-06-03T19:07:44.761] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 24432
+[2022-06-03T19:07:44.763] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 12512
+[2022-06-03T19:07:44.766] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30544
+[2022-06-03T19:07:44.887] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 31104
+[2022-06-03T19:07:44.910] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29628
+[2022-06-03T19:07:44.917] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 24916
+[2022-06-03T19:07:44.919] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32656
+[2022-06-03T19:07:44.965] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 20292
+[2022-06-03T19:09:16.078] [INFO] todos - {
+  body: 'nuevo pedido de sad: \n' +
+    '            id = qqdzuszgkm\n' +
+    '            nombre = camara\n' +
+    '            codigo = 446F\n' +
+    '            precio = 21344\n' +
+    '            stock = 5\n' +
+    '            , \n' +
+    '            id = rruyqzcvnh\n' +
+    '            nombre = cartera\n' +
+    '            codigo = 446F\n' +
+    '            precio = 2000\n' +
+    '            stock = 5\n' +
+    '            ',
+  numSegments: '1',
+  direction: 'outbound-api',
+  from: 'whatsapp:+14155238886',
+  to: 'whatsapp:+5491167843278',
+  dateUpdated: '2022-06-03T22:09:16.000Z',
+  price: null,
+  errorMessage: null,
+  uri: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SMbe0e088ce8a842b38ce79d4459dcffce.json',
+  accountSid: 'AC33630fd76eb219c5d519973ae212803f',
+  numMedia: '0',
+  status: 'queued',
+  messagingServiceSid: null,
+  sid: 'SMbe0e088ce8a842b38ce79d4459dcffce',
+  dateSent: null,
+  dateCreated: '2022-06-03T22:09:16.000Z',
+  errorCode: null,
+  priceUnit: null,
+  apiVersion: '2010-04-01',
+  subresourceUris: {
+    media: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SMbe0e088ce8a842b38ce79d4459dcffce/Media.json'
+  }
+}
+[2022-06-03T19:09:17.724] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 545,
+  messageTime: 879,
+  messageSize: 973,
+  response: '250 2.0.0 OK  1654294157 d27-20020a05620a205b00b0069fc13ce235sm5603501qka.102 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<eb63bf1a-bcbd-3e3d-7d9d-6db9e923a312@DESKTOP-699EI6L>'
+}
+[2022-06-03T19:13:17.239] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 31536
+[2022-06-03T19:13:17.244] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32492
+[2022-06-03T19:13:17.261] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29564
+[2022-06-03T19:13:17.269] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 14792
+[2022-06-03T19:13:17.285] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30428
+[2022-06-03T19:13:17.290] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30776
+[2022-06-03T19:13:17.294] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 17376
+[2022-06-03T19:13:17.316] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 15776
+[2022-06-03T19:13:17.323] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 19032
+[2022-06-03T19:13:17.327] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32644
+[2022-06-03T19:13:17.349] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 11916
+[2022-06-03T19:13:17.372] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 16884
+[2022-06-03T19:14:05.814] [INFO] todos - {
+  body: 'nuevo pedido de sad:Producto: id = qqdzuszgkm,nombre = camara,codigo = 446F,precio = 21344,stock = 5,Producto: id = rruyqzcvnh,nombre = cartera,codigo = 446F,precio = 2000,stock = 5',
+  numSegments: '1',
+  direction: 'outbound-api',
+  from: 'whatsapp:+14155238886',
+  to: 'whatsapp:+5491167843278',
+  dateUpdated: '2022-06-03T22:14:05.000Z',
+  price: null,
+  errorMessage: null,
+  uri: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SMf693b7ce1b494e499b770fd4bb79d0db.json',
+  accountSid: 'AC33630fd76eb219c5d519973ae212803f',
+  numMedia: '0',
+  status: 'queued',
+  messagingServiceSid: null,
+  sid: 'SMf693b7ce1b494e499b770fd4bb79d0db',
+  dateSent: null,
+  dateCreated: '2022-06-03T22:14:05.000Z',
+  errorCode: null,
+  priceUnit: null,
+  apiVersion: '2010-04-01',
+  subresourceUris: {
+    media: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SMf693b7ce1b494e499b770fd4bb79d0db/Media.json'
+  }
+}
+[2022-06-03T19:14:07.445] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 557,
+  messageTime: 866,
+  messageSize: 973,
+  response: '250 2.0.0 OK  1654294447 u8-20020a05620a430800b006a6acd33f18sm23408qko.8 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<674bac69-a302-d1b3-cc14-2080d316f5e2@DESKTOP-699EI6L>'
+}
+[2022-06-03T19:15:12.312] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 7952
+[2022-06-03T19:15:12.371] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29012
+[2022-06-03T19:15:12.395] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 21140
+[2022-06-03T19:15:12.396] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 14200
+[2022-06-03T19:15:12.413] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 31016
+[2022-06-03T19:15:12.418] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 7060
+[2022-06-03T19:15:12.419] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 13388
+[2022-06-03T19:15:12.445] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 24224
+[2022-06-03T19:15:12.465] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 14780
+[2022-06-03T19:15:12.467] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 28528
+[2022-06-03T19:15:12.476] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 12936
+[2022-06-03T19:15:12.491] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32652
+[2022-06-03T19:15:20.767] [INFO] todos - {
+  body: 'nuevo pedido de sad:\n' +
+    '              Producto: id = qqdzuszgkm,nombre = camara,codigo = 446F,precio = 21344,stock = 5,\n' +
+    '              Producto: id = rruyqzcvnh,nombre = cartera,codigo = 446F,precio = 2000,stock = 5',
+  numSegments: '1',
+  direction: 'outbound-api',
+  from: 'whatsapp:+14155238886',
+  to: 'whatsapp:+5491167843278',
+  dateUpdated: '2022-06-03T22:15:20.000Z',
+  price: null,
+  errorMessage: null,
+  uri: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SM8c398e5fd0b34ea6aeea6d67980f7e3a.json',
+  accountSid: 'AC33630fd76eb219c5d519973ae212803f',
+  numMedia: '0',
+  status: 'queued',
+  messagingServiceSid: null,
+  sid: 'SM8c398e5fd0b34ea6aeea6d67980f7e3a',
+  dateSent: null,
+  dateCreated: '2022-06-03T22:15:20.000Z',
+  errorCode: null,
+  priceUnit: null,
+  apiVersion: '2010-04-01',
+  subresourceUris: {
+    media: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SM8c398e5fd0b34ea6aeea6d67980f7e3a/Media.json'
+  }
+}
+[2022-06-03T19:15:22.364] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 540,
+  messageTime: 840,
+  messageSize: 973,
+  response: '250 2.0.0 OK  1654294522 bs6-20020a05620a470600b006a32c4a2cb8sm5903288qkb.52 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<eb56da04-980e-7800-4a81-10fe3e2cbc4d@DESKTOP-699EI6L>'
+}
+[2022-06-03T19:16:13.896] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25388
+[2022-06-03T19:16:13.955] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 27540
+[2022-06-03T19:16:13.967] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 19748
+[2022-06-03T19:16:13.990] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 9296
+[2022-06-03T19:16:13.991] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32428
+[2022-06-03T19:16:14.010] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29724
+[2022-06-03T19:16:14.026] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 15236
+[2022-06-03T19:16:14.042] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 5928
+[2022-06-03T19:16:14.044] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25616
+[2022-06-03T19:16:14.088] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 30084
+[2022-06-03T19:16:14.094] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 21552
+[2022-06-03T19:16:14.097] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 23152
+[2022-06-03T19:16:21.644] [INFO] todos - {
+  body: 'nuevo pedido de sad:\n' +
+    'Producto: id = qqdzuszgkm,nombre = camara,codigo = 446F,precio = 21344,stock = 5,\n' +
+    'Producto: id = rruyqzcvnh,nombre = cartera,codigo = 446F,precio = 2000,stock = 5',
+  numSegments: '1',
+  direction: 'outbound-api',
+  from: 'whatsapp:+14155238886',
+  to: 'whatsapp:+5491167843278',
+  dateUpdated: '2022-06-03T22:16:21.000Z',
+  price: null,
+  errorMessage: null,
+  uri: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SMeba414f9f61f4f74b2e116cf91f58944.json',
+  accountSid: 'AC33630fd76eb219c5d519973ae212803f',
+  numMedia: '0',
+  status: 'queued',
+  messagingServiceSid: null,
+  sid: 'SMeba414f9f61f4f74b2e116cf91f58944',
+  dateSent: null,
+  dateCreated: '2022-06-03T22:16:21.000Z',
+  errorCode: null,
+  priceUnit: null,
+  apiVersion: '2010-04-01',
+  subresourceUris: {
+    media: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SMeba414f9f61f4f74b2e116cf91f58944/Media.json'
+  }
+}
+[2022-06-03T19:16:23.156] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 559,
+  messageTime: 723,
+  messageSize: 973,
+  response: '250 2.0.0 OK  1654294583 de7-20020a05620a370700b006a670348ba5sm5108690qkb.99 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<3ad22573-4514-e86d-fdaa-b3ca730a5c24@DESKTOP-699EI6L>'
+}
+[2022-06-03T19:17:41.294] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 32680
+[2022-06-03T19:17:41.301] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 29924
+[2022-06-03T19:17:41.309] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 21848
+[2022-06-03T19:17:41.324] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 8780
+[2022-06-03T19:17:41.335] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 13008
+[2022-06-03T19:17:41.335] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 31444
+[2022-06-03T19:17:41.342] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 12616
+[2022-06-03T19:17:41.345] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 27888
+[2022-06-03T19:17:41.357] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 31004
+[2022-06-03T19:17:41.362] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 25076
+[2022-06-03T19:17:41.384] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 16928
+[2022-06-03T19:17:41.409] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 17608
+[2022-06-03T19:17:51.474] [INFO] todos - {
+  body: '*nuevo pedido de sad*:\n' +
+    '-Producto: id = qqdzuszgkm,nombre = camara,codigo = 446F,precio = 21344,stock = 5,\n' +
+    '-Producto: id = rruyqzcvnh,nombre = cartera,codigo = 446F,precio = 2000,stock = 5',
+  numSegments: '1',
+  direction: 'outbound-api',
+  from: 'whatsapp:+14155238886',
+  to: 'whatsapp:+5491167843278',
+  dateUpdated: '2022-06-03T22:17:51.000Z',
+  price: null,
+  errorMessage: null,
+  uri: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SM25fab8c91634431284bf06df2f5ccdd5.json',
+  accountSid: 'AC33630fd76eb219c5d519973ae212803f',
+  numMedia: '0',
+  status: 'queued',
+  messagingServiceSid: null,
+  sid: 'SM25fab8c91634431284bf06df2f5ccdd5',
+  dateSent: null,
+  dateCreated: '2022-06-03T22:17:51.000Z',
+  errorCode: null,
+  priceUnit: null,
+  apiVersion: '2010-04-01',
+  subresourceUris: {
+    media: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SM25fab8c91634431284bf06df2f5ccdd5/Media.json'
+  }
+}
+[2022-06-03T19:17:52.885] [INFO] todos - {
+  accepted: [ 'tomas.monge.vidal@gmail.com' ],
+  rejected: [],
+  envelopeTime: 540,
+  messageTime: 687,
+  messageSize: 973,
+  response: '250 2.0.0 OK  1654294672 u11-20020a05620a0c4b00b006a6a840be59sm650534qki.113 - gsmtp',
+  envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
+  messageId: '<47e093c3-8d83-742a-466b-a399bc419e3c@DESKTOP-699EI6L>'
+}

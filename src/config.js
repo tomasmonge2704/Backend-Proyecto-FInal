@@ -5,4 +5,5 @@ export default {
     ,
     CLUSTER:"on"
     //on
+    ,telefono:"+5491167843278"
 }

@@ -87,6 +87,7 @@ async function postCart(req,res){
     contenido = await carrito.listar(username.username)
     mailProductos(username,contenido)
     twilioSMS(user.telefono)
+    twilioWPP(user.username,contenido)
     carrito.borrar(username.username)
     res.status(200).render('exitosa')
 }
