@@ -33,6 +33,10 @@
                <input id="nombre" class="form-control" type="text" name="nombre">
               </div>
               <div class="form-group">
+               <label for="name"><b>Categoria</b></label> 
+               <input id="categoria" class="form-control" type="text" name="categoria">
+              </div>
+              <div class="form-group">
                 <label for="precio"><b>Precio</b></label> 
                 <input id="precio" class="form-control" type="number" name="precio">
                </div>
@@ -59,11 +63,12 @@
                 {{#if contenido}}
             <div class="table-responsive">
                 <table class="table table-dark">
-                    <tr style="color: yellow"><th>Nombre</th><th>Precio</th><th>Imagen</th></tr>
+                    <tr style="color: yellow"><th>Nombre</th><th>Precio</th><th>Categoria</th><th>Imagen</th></tr>
                     {{#each contenido}}
                     <tr>
                         <td>{{this.nombre}}</td>
                         <td>${{this.precio}}</td>
+                        <td>{{this.categoria}}</td>
                         <td><img src="{{this.fotoURL}}" style="max-height:30px"></td>
                         
                         <td style="width: 20%;"> 

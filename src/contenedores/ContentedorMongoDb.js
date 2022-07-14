@@ -12,7 +12,7 @@ class ContenedorMongo {
   async listar(id) {
     try {
       if (this.ruta === "productos") {
-        const buscado = await modelProd.productos.find({ id: id }).lean();
+        const buscado = await modelProd.productos.find({ _id: id }).lean();
         return buscado;
       } else {
         const buscado = await modelCart.carritos.find({ id: id }).lean();
@@ -35,7 +35,17 @@ class ContenedorMongo {
       return undefined;
     }
   }
-
+  async listarCategoria(categoria) {
+    try {
+      if (this.ruta === "productos") {
+        let elems = await modelProd.productos.find({ categoria: categoria }).lean();
+        return elems;
+       
+      }
+    } catch (error) {
+      return undefined;
+    }
+  }
   async guardar(elem,id) {
     
     try {

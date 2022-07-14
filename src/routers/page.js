@@ -18,6 +18,11 @@ pageRouter.get('/logout', getLogout)
 pageRouter.get('/carrito',checkAuthentication,getCart)
 pageRouter.post('/carrito',checkAuthentication,postCart)
 pageRouter.get('/user',checkAuthentication,getUser)
+pageRouter.get('/productos',checkAuthentication,getProds)
+pageRouter.get('/productos/:categoria',checkAuthentication,getProdsCategoria)
+pageRouter.get('/producto/:id',checkAuthentication,getProdId)
+pageRouter.get('/chat',checkAuthentication,chat)
+pageRouter.get('/chat/:email',checkAuthentication,ChatEmail)
 //index
 function getRoot(req,res){
     const username = req.user.username
@@ -51,7 +56,7 @@ function getSignup(req,res){
 //PROSSER LOGIN
 function postLogin (req, res){
     var user = req.user;
-    res.redirect('/')
+    res.redirect('/productos')
 }
 //PROCESS SIGNUP
 function postSignup (req, res){
@@ -81,6 +86,22 @@ async function getCart(req,res){
     contenido = await carrito.listar(req.user.username)
     res.render('carrito',{username,contenido})
 }
+async function getProds(req,res){
+    productos.listarAll().then(function (contenido) {
+    res.render('productos',{contenido})
+})
+}
+async function getProdsCategoria(req,res){
+    productos.listarCategoria(req.params.categoria).then(function (contenido) {
+    res.render('productos',{contenido})
+})
+}
+async function getProdId(req,res){
+    const id = req.params.id
+    productos.listar(id).then(function (contenido) {
+    res.render('detalleProducto',{contenido,id})
+})
+}
 async function postCart(req,res){
     const username =  req.user
     let user = await findUser(username.username)
@@ -94,5 +115,13 @@ async function postCart(req,res){
 async function getUser(req,res){
     let user = await findUser(req.user.username)
     res.render('user',{user})
+}
+async function chat(req,res){
+    let user = await findUser(req.user.username)
+    res.render('chat')
+}
+async function ChatEmail(req,res){
+    let user = await findUser(req.user.username)
+    res.render('chatEmail')
 }
 export {pageRouter,failRoute}

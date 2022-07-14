@@ -597,3 +597,29 @@
   envelope: { from: '', to: [ 'tomas.monge.vidal@gmail.com' ] },
   messageId: '<47e093c3-8d83-742a-466b-a399bc419e3c@DESKTOP-699EI6L>'
 }
+[2022-07-14T01:54:34.600] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 37344
+[2022-07-14T01:54:34.612] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 38972
+[2022-07-14T01:54:34.719] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 41044
+[2022-07-14T01:54:34.731] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 10544
+[2022-07-14T01:54:34.748] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 28224
+[2022-07-14T01:54:34.809] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 41412
+[2022-07-14T01:54:34.829] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 36684
+[2022-07-14T01:54:34.862] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 8960
+[2022-07-14T01:54:34.952] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 34892
+[2022-07-14T01:54:34.964] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 8068
+[2022-07-14T01:54:34.964] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 36556
+[2022-07-14T01:54:34.999] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 33752
+[2022-07-14T01:58:55.524] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 37280
+[2022-07-14T02:04:35.751] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 3828
+[2022-07-14T02:13:24.331] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 43632
+[2022-07-14T02:20:58.339] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 36620
+[2022-07-14T02:23:09.223] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 42864
+[2022-07-14T02:24:11.710] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 38936
+[2022-07-14T02:26:18.056] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 39640
+[2022-07-14T02:31:58.262] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 10028
+[2022-07-14T02:37:01.828] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 37336
+[2022-07-14T02:40:36.393] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 43780
+[2022-07-14T02:41:44.975] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 31988
+[2022-07-14T02:43:12.637] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 24848
+[2022-07-14T02:44:56.765] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 22044
+[2022-07-14T02:53:17.471] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 2980

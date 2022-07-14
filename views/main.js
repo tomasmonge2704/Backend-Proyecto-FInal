@@ -11,6 +11,7 @@ axios.delete(`http://localhost:8080/api/productos/${id}`)
 function addProd(elem){
 
 var nombre = document.getElementById('nombre').value
+var categoria = document.getElementById('categoria').value
 var precio = document.getElementById('precio').value
 var fotoURL = document.getElementById('fotoURL').value
 var codigo = document.getElementById('codigo').value
@@ -18,6 +19,7 @@ var stock = document.getElementById('stock').value
 
 axios.post(`http://localhost:8080/api/productos/`,{
   nombre:nombre,
+  categoria:categoria,
   precio:precio,
   fotoURL:fotoURL,
   codigo:codigo,
