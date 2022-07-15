@@ -45,3 +45,6 @@ para cambiar la base de datos modificar "DB", en archivo config.js
 ## Modo Cluster
 para cambiar a modo Cluster modificar "CLUSTER" y poner "on", en archivo config.js
 ### `CLUSTER:"on" o "no"`
+
+## Link de Heroku
+### `https://coder-proyectofinal.herokuapp.com/`
