@@ -12,6 +12,19 @@ class ContenedorMongo {
   async listar(id) {
     try {
       if (this.ruta === "productos") {
+        const buscado = await modelProd.productos.find({ id: id }).lean();
+        return buscado;
+      } else {
+        const buscado = await modelCart.carritos.find({ id: id }).lean();
+        return buscado[0].productos;
+      }
+    } catch (error) {
+      return undefined;
+    }
+  }
+  async listarId(id) {
+    try {
+      if (this.ruta === "productos") {
         const buscado = await modelProd.productos.find({ _id: id }).lean();
         return buscado;
       } else {

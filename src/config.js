@@ -6,4 +6,5 @@ export default {
     CLUSTER:"no"
     //on
     ,telefono:"+5491167843278"
+    ,mailAdmin:"tomasmongevidal@gmail.com"
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
     <script src="/socket.io/socket.io.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -63,25 +64,23 @@
                 {{#if contenido}}
             <div class="table-responsive">
                 <table class="table table-dark">
-                    <tr style="color: yellow"><th>Nombre</th><th>Precio</th><th>Categoria</th><th>Imagen</th></tr>
+                    <tr style="color: yellow"><th>Nombre</th><th>Precio</th><th>Categoria</th><th>_Id</th><th>Imagen</th></tr>
                     {{#each contenido}}
-                    <tr>
+                    
+                    <tr class="productoRow" onclick="document.location = '/producto/{{this._id}}';" style="z-index:-1;">
+                       
                         <td>{{this.nombre}}</td>
                         <td>${{this.precio}}</td>
                         <td>{{this.categoria}}</td>
+                        <td>{{this._id}}</td>
                         <td><img src="{{this.fotoURL}}" style="max-height:30px"></td>
                         
-                        <td style="width: 20%;"> 
-                         
-                        <button class="btn btn-success mt-3 mb-5" onclick="addToCart('{{this.id}}')">Agregar al carrito</button>
-                       
-                        </td>
                         
                         <td style="width: 10%;"> 
                           
-                          <button class="btn btn-danger mt-3 mb-5" onclick="deleteProd('{{this.id}}')">X</button>
+                          <button class="btn btn-danger mt-3 mb-5" onclick="deleteProd('{{this.id}}')" style="z-index:1000;">X</button>
                 
-                          </td>
+                          </td>                  
                     </tr>
                    {{/each}}
                 </table>

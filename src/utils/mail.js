@@ -1,6 +1,7 @@
 import nodemailer, { createTransport } from 'nodemailer';
 import { loggerTodos } from './log4js.js';
-const TEST_MAIL = 'tomas.monge.vidal@gmail.com'
+import config from '../config.js';
+const TEST_MAIL = config.mailAdmin
 
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',

@@ -87,8 +87,9 @@ async function getCart(req,res){
     res.render('carrito',{username,contenido})
 }
 async function getProds(req,res){
+    const username = req.user.username
     productos.listarAll().then(function (contenido) {
-    res.render('productos',{contenido})
+    res.render('index',{username,contenido})
 })
 }
 async function getProdsCategoria(req,res){
@@ -98,8 +99,9 @@ async function getProdsCategoria(req,res){
 }
 async function getProdId(req,res){
     const id = req.params.id
-    productos.listar(id).then(function (contenido) {
-    res.render('detalleProducto',{contenido,id})
+    const username = req.user.username
+    productos.listarId(id).then(function (contenido) {
+    res.render('detalleProducto',{contenido,id,username})
 })
 }
 async function postCart(req,res){
