@@ -623,3 +623,6 @@
 [2022-07-14T02:43:12.637] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 24848
 [2022-07-14T02:44:56.765] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 22044
 [2022-07-14T02:53:17.471] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 2980
+[2022-07-14T22:27:43.940] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 24748
+[2022-07-14T22:42:53.875] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 40848
+[2022-07-14T22:46:52.210] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 45092

@@ -1,4 +1,11 @@
+import { createRequire } from "module"; // Bring in the ability to create the 'require' method
+const require = createRequire(import.meta.url); // construct the require method
 import express from "express";
+const { Server: HttpServer } = require('http')
+const { Server: IOServer } = require('socket.io')
+const app = express()
+const httpServer = new HttpServer(app)
+const io = new IOServer(httpServer)
 import session from "express-session"
 import config from "./src/config.js";
 import { productosApiRouter, productos } from "./src/routers/productos.js";
@@ -11,10 +18,15 @@ import {loggerTodos} from "./src/utils/log4js.js";
 import os from 'os'
 import cluster from 'cluster'
 const numCPUs = os.cpus().length;
-const app = express()
+
 
 let arrProductos = []
 arrProductos = productos.listarAll()
+const messages = [
+    { author: "Juan", text: "¡Hola! ¿Que tal?" },
+    { author: "Pedro", text: "¡Muy bien! ¿Y vos?" },
+    { author: "Ana", text: "¡Genial!" }
+ ];
 
 app.use(session({
     secret: 'keyboard cat',
@@ -45,6 +57,16 @@ app.use("/api/carrito", carritoApiRouter)
 app.use("/", pageRouter)
 app.get('*', failRoute);
 
+io.on('connection',socket => {
+    socket.emit('messages', messages);
+
+    socket.on('new-message',data => {
+        messages.push(data);
+        io.sockets.emit('messages', messages);
+    });
+ });
+
+app.use(express.static('views'))
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
 
@@ -59,7 +81,7 @@ if (cluster.isMaster && config.CLUSTER == "on" ){
     })
 
 }else{
-    const connectedServer = app.listen(config.PORT, () => {
+    const connectedServer = httpServer.listen(config.PORT, () => {
         loggerTodos.info(`Servidor escuchando en el puerto ${config.PORT}- PID WORKER ${process.pid}`)
     })
     connectedServer.on('error', error => loggerTodos.fatal(`Error en el servidor ${error}`))
