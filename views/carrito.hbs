@@ -47,7 +47,7 @@
   <script>
 const user = "{{ username }}"
 function deleteProd(id){
-axios.delete(`http://localhost:8080/api/carrito/${user}/productos/${id}`)
+axios.delete(`/api/carrito/${user}/productos/${id}`)
 .then((response) => {
     location.reload();
     console.log(response)

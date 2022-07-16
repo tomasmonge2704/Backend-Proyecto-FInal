@@ -66,3 +66,40 @@
   }
 }
 [2022-07-16T00:05:41.691] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 40952
+[2022-07-16T05:59:28.396] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 44348
+[2022-07-16T05:59:45.090] [ERROR] todos - TypeError: Cannot read properties of undefined (reading 'map')
+    at twilioWPP (file:///C:/Users/tomas/OneDrive/Escritorio/Coder%20House/backend-Proyecto-Final/src/utils/twilio.js:27:18)
+    at postSignup (file:///C:/Users/tomas/OneDrive/Escritorio/Coder%20House/backend-Proyecto-Final/src/routers/page.js:65:5)
+    at Layer.handle [as handle_request] (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\express\lib\router\route.js:144:13)
+    at complete (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\passport\lib\middleware\authenticate.js:271:13)
+    at C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\passport\lib\middleware\authenticate.js:278:15
+    at pass (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\passport\lib\authenticator.js:428:14)
+    at Authenticator.transformAuthInfo (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\passport\lib\authenticator.js:450:5)
+    at C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\passport\lib\middleware\authenticate.js:275:22
+    at C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\passport\lib\http\request.js:41:7
+[2022-07-16T05:59:46.467] [ERROR] todos - Error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials f17-20020a0568301c3100b0061680c8c9e2sm2799666ote.70 - gsmtp
+    at SMTPConnection._formatError (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:784:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:1536:34)
+    at SMTPConnection.<anonymous> (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:540:26)
+    at SMTPConnection._processResponse (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:947:20)
+    at SMTPConnection._onData (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:749:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:189:44)
+    at TLSSocket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. Learn more at\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials f17-20020a0568301c3100b0061680c8c9e2sm2799666ote.70 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2022-07-16T19:13:24.137] [INFO] todos - Servidor escuchando en el puerto 3000- PID WORKER 12440
+[2022-07-16T19:14:59.353] [INFO] todos - Servidor escuchando en el puerto 3000- PID WORKER 45796
+[2022-07-16T19:20:12.743] [INFO] todos - Servidor escuchando en el puerto 3000- PID WORKER 42396
+[2022-07-16T19:20:22.992] [INFO] todos - Servidor escuchando en el puerto 3000- PID WORKER 44036
+[2022-07-16T19:28:00.636] [INFO] todos - Servidor escuchando en el puerto 3000- PID WORKER 2308
+[2022-07-16T19:38:06.383] [INFO] todos - Servidor escuchando en el puerto 3000- PID WORKER 49532
+[2022-07-16T19:45:03.657] [INFO] todos - Servidor escuchando en http://127.0.0.1:3000 - PID WORKER 41868

@@ -81,8 +81,8 @@ if (cluster.isMaster && config.CLUSTER == "on" ){
     })
 
 }else{
-    const connectedServer = httpServer.listen(config.PORT, () => {
-        loggerTodos.info(`Servidor escuchando en el puerto ${config.PORT}- PID WORKER ${process.pid}`)
+    const connectedServer = httpServer.listen(config.PORT, config.HOST, () => {
+        loggerTodos.info(`Servidor escuchando en http://${config.HOST}:${config.PORT} - PID WORKER ${process.pid}`)
     })
     connectedServer.on('error', error => loggerTodos.fatal(`Error en el servidor ${error}`))
 }

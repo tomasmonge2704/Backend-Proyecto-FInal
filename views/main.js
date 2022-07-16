@@ -1,6 +1,6 @@
 function deleteProd(id) {
   axios
-    .delete(`http://localhost:8080/api/productos/${id}`)
+    .delete(`/api/productos/${id}`)
     .then((response) => {
       location.reload();
       console.log(response);
@@ -18,7 +18,7 @@ function addProd(elem) {
   var stock = document.getElementById("stock").value;
   var cantidad = document.getElementById("cantidad").value;
   axios
-    .post(`http://localhost:8080/api/productos/`, {
+    .post(`/api/productos/`, {
       nombre: nombre,
       categoria: categoria,
       precio: precio,
@@ -37,11 +37,11 @@ function addProd(elem) {
 }
 function addToCart(id) {
   axios
-    .get(`http://localhost:8080/api/productos/${id}`)
+    .get(`/api/productos/${id}`)
     .then((response) => {
       const elem = response.data[0];
       axios
-        .post(`http://localhost:8080/api/carrito/${user}/productos`, {
+        .post(`/carrito/${user}/productos`, {
           id: elem.id,
           nombre: elem.nombre,
           precio: elem.precio,
