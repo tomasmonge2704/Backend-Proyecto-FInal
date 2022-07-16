@@ -20,3 +20,49 @@
 [2022-07-15T23:30:13.511] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 42816
 [2022-07-15T23:33:04.277] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 42836
 [2022-07-15T23:37:32.932] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 11516
+[2022-07-15T23:43:43.959] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 44888
+[2022-07-15T23:55:21.350] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 46268
+[2022-07-15T23:55:31.164] [ERROR] todos - Error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials bl20-20020a056808309400b0033a314105b8sm2393357oib.13 - gsmtp
+    at SMTPConnection._formatError (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:784:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:1536:34)
+    at SMTPConnection.<anonymous> (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:540:26)
+    at SMTPConnection._processResponse (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:947:20)
+    at SMTPConnection._onData (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:749:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\tomas\OneDrive\Escritorio\Coder House\backend-Proyecto-Final\node_modules\nodemailer\lib\smtp-connection\index.js:189:44)
+    at TLSSocket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. Learn more at\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials bl20-20020a056808309400b0033a314105b8sm2393357oib.13 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2022-07-15T23:55:31.264] [INFO] todos - {
+  body: '*nuevo pedido de sad*:\n' +
+    '-Producto: id = qrhopvomku,nombre = nike,codigo = ,precio = 500,stock = 5',
+  numSegments: '1',
+  direction: 'outbound-api',
+  from: 'whatsapp:+14155238886',
+  to: 'whatsapp:+5491167843278',
+  dateUpdated: 2022-07-16T02:55:37.000Z,
+  price: null,
+  errorMessage: null,
+  uri: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SMac99918eceae404786a685682c427cb3.json',
+  accountSid: 'AC33630fd76eb219c5d519973ae212803f',
+  numMedia: '0',
+  status: 'queued',
+  messagingServiceSid: null,
+  sid: 'SMac99918eceae404786a685682c427cb3',
+  dateSent: null,
+  dateCreated: 2022-07-16T02:55:37.000Z,
+  errorCode: null,
+  priceUnit: null,
+  apiVersion: '2010-04-01',
+  subresourceUris: {
+    media: '/2010-04-01/Accounts/AC33630fd76eb219c5d519973ae212803f/Messages/SMac99918eceae404786a685682c427cb3/Media.json'
+  }
+}
+[2022-07-16T00:05:41.691] [INFO] todos - Servidor escuchando en el puerto 8080- PID WORKER 40952

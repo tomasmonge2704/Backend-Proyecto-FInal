@@ -15,7 +15,8 @@ const carritoSchema = new mongoose.Schema({
       fotoURL: { type: String, require: true, max: 100 },
       precio: { type: String, require: true, max: 100 },
       stock: { type: String, require: true, max: 100 },
-      cantidad:{ type: String, require: true, max: 100 }
+      cantidad:{ type: String, require: true, max: 100 },
+      color:{ type: String, require: true, max: 100 }
     },
   ],
 });

@@ -1,12 +1,13 @@
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
 import { loggerConsola } from "../utils/log4js.js";
+import config from "../config.js";
 const require = createRequire(import.meta.url); // construct the require method
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 //mongo
 const mongoose = require("mongoose");
 var bCrypt = require("bcryptjs");
-const url = `mongodb+srv://tomas2:1roZJIVtj5JnG5HH@cluster0.nmb6c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const url = config.MongoAtlas_URL;
 
 const connectionParams = {
   useNewUrlParser: true,

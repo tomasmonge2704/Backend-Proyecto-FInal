@@ -1,8 +1,9 @@
 //firebase
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
+import config from "../config.js";
 const require = createRequire(import.meta.url); // construct the require method
 var admin = require("firebase-admin");
-var serviceAccount = require("./backend-4df83-firebase-adminsdk-tl00v-825e02ec91.json");
+var serviceAccount = require(config.Firebase_URL);
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -13,7 +14,7 @@ import mongoose from "mongoose";
 async function InitMongo() {
   try {
     const URL =
-      "mongodb+srv://tomas2:1roZJIVtj5JnG5HH@cluster0.nmb6c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+      config.MongoAtlas_URL;
     let rta = await mongoose.connect(URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
