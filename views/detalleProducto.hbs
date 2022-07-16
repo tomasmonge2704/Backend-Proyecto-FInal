@@ -38,7 +38,15 @@
     </script>
   </head>
   <body>
+    
     {{#if contenido}}
+ <div class="container mt-3" >
+        <div class="jumbotron" style="height:80px; padding:0px ;">
+          <form action="/" method="get" style="margin-left:5%;">
+            <button class="btn btn-success mt-3 mb-5">volver a Cargar productos</button>
+          </form>
+        </div>
+      </div>
       <div class="container mt-3">
         <br />
 
@@ -53,20 +61,7 @@
                     <a href="#"><img src="{{contenido.0.fotoURL}}" /></a></div>
                 </div>
                 <!-- slider-product.// -->
-                <div class="img-small-wrap">
-                  <div class="item-gallery">
-                    <img src="{{contenido.0.fotoURL}}" />
-                  </div>
-                  <div class="item-gallery">
-                    <img src="{{contenido.0.fotoURL}}" />
-                  </div>
-                  <div class="item-gallery">
-                    <img src="{{contenido.0.fotoURL}}" />
-                  </div>
-                  <div class="item-gallery">
-                    <img src="{{contenido.0.fotoURL}}" />
-                  </div>
-                </div>
+               
                 <!-- slider-nav.// -->
               </article>
               <!-- gallery-wrap .end// -->
@@ -186,13 +181,7 @@
         <!-- card.// -->
 
       </div>
-      <div class="container mt-3">
-        <div class="jumbotron">
-          <form action="/" method="get">
-            <button class="btn btn-success mt-3 mb-5">volver a Cargar productos</button>
-          </form>
-        </div>
-      </div>
+      
     {{else}}
       <div class="container mt-3">
         <div class="jumbotron">
