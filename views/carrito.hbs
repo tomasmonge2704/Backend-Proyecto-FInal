@@ -14,11 +14,12 @@
         {{#if contenido}}
             <div class="table-responsive">
                 <table class="table table-dark">
-                    <tr style="color: yellow"><th>Nombre</th><th>Precio</th><th>Imagen</th></tr>
+                    <tr style="color: yellow"><th>Nombre</th><th>Precio</th><th>Cantidad</th><th>Imagen</th></tr>
                     {{#each contenido}}
                     <tr>
                         <td>{{this.nombre}}</td>
                         <td>${{this.precio}}</td>
+                        <td>{{this.cantidad}}</td>
                         <td><img src="{{this.fotoURL}}" style="max-height:30px"></td>
                     <td style="width: 10%;"> 
                           

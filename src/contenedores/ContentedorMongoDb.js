@@ -105,11 +105,21 @@ class ContenedorMongo {
   async actualizarProd(elem, id) {
     try {
       let productos = await this.listar(id);
-      if (productos == undefined){
-        const e = new modelCart.carritos({id:id,timestamp:fechaYHora,productos:elem}).save();
-        return e
-      }else{
+      
+      if (productos.length === 0){
         productos.push(elem)
+        let cartUpdate = await modelCart.carritos.updateOne(
+          { id: id },
+          { $set: { productos: productos } }
+        );
+        
+        return cartUpdate;
+      }else{
+        productos.map(function(e){
+          if(e.nombre == elem.nombre && e.categoria == elem.categoria){
+            e.cantidad = parseInt(e.cantidad) + 1
+          }
+        })
           let cartUpdate = await modelCart.carritos.updateOne(
             { id: id },
             { $set: { productos: productos } }
@@ -119,6 +129,7 @@ class ContenedorMongo {
       
     
     } catch (error) {
+      console.log(error)
       return undefined;
     }
   }

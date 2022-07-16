@@ -44,6 +44,10 @@
                 <label for="precio"><b>Precio</b></label> 
                 <input id="precio" class="form-control" type="number" name="precio">
                </div>
+                <div class="form-group">
+                <label for="Cantidad"><b>Cantidad</b></label> 
+                <input id="cantidad" class="form-control" type="number" name="Cantidad">
+               </div>
                <div class="form-group">
                 <label for="imageURL"><b>Foto URL</b></label> 
                 <input id="fotoURL" class="form-control" type="text" name="fotoURL">
@@ -99,13 +103,14 @@
             </form>
             <div class="table-responsive">
                 <table class="table table-dark">
-                    <tr style="color: yellow"><th>Nombre</th><th>Precio</th><th>Categoria</th><th>_Id</th><th>Imagen</th></tr>
+                    <tr style="color: yellow"><th>Nombre</th><th>Precio</th><th>Cantidad</th><th>Categoria</th><th>_Id</th><th>Imagen</th></tr>
                     {{#each contenido}}
                     
                     <tr class="productoRow" onclick="document.location = '/producto/{{this._id}}';" style="z-index:-1;">
                        
                         <td>{{this.nombre}}</td>
                         <td>${{this.precio}}</td>
+                         <td>{{this.cantidad}}</td>
                         <td>{{this.categoria}}</td>
                         <td>{{this._id}}</td>
                         <td><img src="{{this.fotoURL}}" style="max-height:30px"></td>

@@ -12,6 +12,7 @@ const productosSchema = new mongoose.Schema({
     fotoURL: {type:String, require:true, max:100},
     precio: {type:String, require:true, max:100},
     stock: {type:String, require:true, max:100},
+    cantidad: {type:String, require:true, max:100}
 })
 
 export const productos = mongoose.model(productosCollection, productosSchema)

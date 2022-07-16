@@ -16,7 +16,7 @@ function addProd(elem) {
   var fotoURL = document.getElementById("fotoURL").value;
   var codigo = document.getElementById("codigo").value;
   var stock = document.getElementById("stock").value;
-
+  var cantidad = document.getElementById("cantidad").value;
   axios
     .post(`http://localhost:8080/api/productos/`, {
       nombre: nombre,
@@ -25,6 +25,7 @@ function addProd(elem) {
       fotoURL: fotoURL,
       codigo: codigo,
       stock: stock,
+      cantidad:cantidad
     })
     .then((response) => {
       console.log(response);
@@ -47,8 +48,10 @@ function addToCart(id) {
           fotoURL: elem.fotoURL,
           codigo: elem.codigo,
           stock: elem.stock,
+          cantidad:elem.cantidad
         })
         .then((response) => {
+
           console.log(response);
         });
     })
