@@ -7,7 +7,7 @@ const app = express()
 const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
 import session from "express-session"
-import config from "./src/config.js";
+import config from "./config.js";
 import { productosApiRouter, productos } from "./src/routers/productos.js";
 import { carritoApiRouter } from "./src/routers/carrito.js";
 import { pageRouter, failRoute } from "./src/routers/page.js";

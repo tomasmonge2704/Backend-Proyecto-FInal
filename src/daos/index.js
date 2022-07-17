@@ -1,6 +1,6 @@
 //firebase
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
-import config from "../config.js";
+import config from "../../config.js";
 const require = createRequire(import.meta.url); // construct the require method
 var admin = require("firebase-admin");
 var serviceAccount = require(config.Firebase_URL);

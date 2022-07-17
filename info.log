@@ -1,0 +1,25 @@
+[2022-07-17T04:33:12.100] [INFO] todos - Servidor escuchando en http://127.0.0.1:3000 - PID WORKER 41600
+[2022-07-17T04:33:12.154] [INFO] todos - Servidor escuchando en http://127.0.0.1:3000 - PID WORKER 41598
+[2022-07-17T04:33:12.209] [INFO] todos - Servidor escuchando en http://127.0.0.1:3000 - PID WORKER 41597
+[2022-07-17T04:33:12.231] [INFO] todos - Servidor escuchando en http://127.0.0.1:3000 - PID WORKER 41603
+[2022-07-17T04:33:12.235] [INFO] todos - Servidor escuchando en http://127.0.0.1:3000 - PID WORKER 41601
+[2022-07-17T04:33:12.259] [INFO] todos - Servidor escuchando en http://127.0.0.1:3000 - PID WORKER 41604
+[2022-07-17T04:33:12.308] [INFO] todos - Servidor escuchando en http://127.0.0.1:3000 - PID WORKER 41602
+[2022-07-17T04:33:12.331] [INFO] todos - Servidor escuchando en http://127.0.0.1:3000 - PID WORKER 41599
+[2022-07-17T04:36:41.316] [INFO] todos - Servidor escuchando en http://127.0.0.1:3000 - PID WORKER 41679
+[2022-07-17T04:41:45.329] [FATAL] todos - Error en el servidor Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+[2022-07-17T04:42:39.221] [FATAL] todos - Error en el servidor Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+[2022-07-17T04:44:23.900] [FATAL] todos - Error en el servidor Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+[2022-07-17T04:44:47.359] [FATAL] todos - Error en el servidor Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+[2022-07-17T04:46:31.587] [FATAL] todos - Error en el servidor Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+[2022-07-17T04:46:59.136] [FATAL] todos - Error en el servidor Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+[2022-07-17T04:49:30.171] [FATAL] todos - Error en el servidor Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+[2022-07-17T04:52:24.049] [INFO] todos - Servidor escuchando en http://127.0.0.1:3001 - PID WORKER 42101
+[2022-07-17T04:54:51.049] [INFO] todos - Servidor escuchando en http://127.0.0.1:3001 - PID WORKER 42151
+[2022-07-17T05:02:01.229] [INFO] todos - Servidor escuchando en http://127.0.0.1:3001 - PID WORKER 42326
+[2022-07-17T05:02:38.618] [INFO] todos - Servidor escuchando en http://127.0.0.1:3001 - PID WORKER 42358
+[2022-07-17T05:04:05.268] [INFO] todos - Servidor escuchando en http://127.0.0.1:3001 - PID WORKER 42438
+[2022-07-17T05:06:04.438] [INFO] todos - Servidor escuchando en http://127.0.0.1:3001 - PID WORKER 42494
+[2022-07-17T05:09:12.305] [INFO] todos - Servidor escuchando en http://127.0.0.1:3001 - PID WORKER 42725
+[2022-07-17T05:10:44.398] [INFO] todos - Servidor escuchando en http://localhost:8080 - PID WORKER 42765
+[2022-07-17T05:13:59.324] [INFO] todos - Servidor escuchando en http://localhost:8080 - PID WORKER 42810

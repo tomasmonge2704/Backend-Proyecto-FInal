@@ -2,7 +2,7 @@ import { Router } from "express";
 import productosApiArchivo from "../daos/productos/ProductosDaoArchivo.js";
 import productosApiMongo from "../daos/productos/ProductosDaoMongoDb.js";
 import productosApiFirebase from "../daos/productos/ProductosDaoFirebase.js";
-import config from "../config.js";
+import config from "../../config.js";
 import { passport, checkAuthentication } from "./passport.js";
 let productos = productosApiArchivo;
 if (config.DB === "mongo") {

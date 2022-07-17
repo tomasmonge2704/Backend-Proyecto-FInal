@@ -1,6 +1,6 @@
 import twilio from "twilio";
 import { loggerTodos } from "./log4js.js";
-import config from "../config.js";
+import config from "../../config.js";
 const accountSid = "AC33630fd76eb219c5d519973ae212803f";
 const authToken = config.TWILIO_TOKEN;
 

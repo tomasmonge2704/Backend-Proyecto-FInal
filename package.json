@@ -29,15 +29,15 @@
   "version": "1.0.0",
   "main": "pug.js",
   "engines": {
-    "node": "16.14.0",
-    "npm": "8.1.4"
+    "node": "^16.14.0",
+    "npm": "^s8.1.4"
   },
   "type": "module",
   "scripts": {
     "test": "set HOST=localhost&& set PORT=8000&& node server.js",
     "start": "node server.js",
-    "dev": "set NODE_ENV=development&& node server.js",
-    "prod": "set NODE_ENV=production&& node server.js"
+    "dev": "NODE_ENV=development node server.js",
+    "prod": "NODE_ENV=production node server.js"
   },
   "repository": {
     "type": "git",

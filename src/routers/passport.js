@@ -1,6 +1,6 @@
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
 import { loggerConsola } from "../utils/log4js.js";
-import config from "../config.js";
+import config from "../../config.js";
 const require = createRequire(import.meta.url); // construct the require method
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;

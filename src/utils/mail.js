@@ -1,6 +1,6 @@
 import nodemailer, { createTransport } from 'nodemailer';
 import { loggerTodos } from './log4js.js';
-import config from '../config.js';
+import config from '../../config.js';
 const TEST_MAIL = config.mailAdmin
 
 const transporter = nodemailer.createTransport({

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import config from "../config.js";
+import config from "../../config.js";
 import carritoApiArchivo from "../daos/carritos/CarritosDaoArchivo.js";
 import CarritosApiFirebase from "../daos/carritos/CarritosDaoFirebase.js";
 import carritosApiMongo from "../daos/carritos/CarritosDaoMongoDb.js";
