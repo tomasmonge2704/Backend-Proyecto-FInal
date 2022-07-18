@@ -35,3 +35,5 @@
 [2022-07-18T02:39:35.456] [INFO] todos - Servidor escuchando en http://localhost:8080 - PID WORKER 6044
 [2022-07-18T02:39:35.459] [INFO] todos - Servidor escuchando en http://localhost:8080 - PID WORKER 28164
 [2022-07-18T02:39:35.479] [INFO] todos - Servidor escuchando en http://localhost:8080 - PID WORKER 19676
+[2022-07-18T03:10:27.029] [INFO] todos - Servidor escuchando en http://undefined:5000 - PID WORKER 19868
+[2022-07-18T03:11:05.691] [INFO] todos - Servidor escuchando en el puerto 5000 - PID WORKER 13844

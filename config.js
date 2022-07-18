@@ -11,8 +11,7 @@ dotenv.config({
 
 export default {
     NODE_ENV: process.env.NODE_ENV || 'development',
-    HOST: process.env.HOST || 'localhost',
-    PORT: process.env.PORT || 8080,
+    PORT: process.env.PORT || 5000,
     DB:"mongo"
     //mongo o firebase
     ,
