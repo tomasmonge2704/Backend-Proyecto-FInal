@@ -30,7 +30,7 @@
   "main": "pug.js",
   "engines": {
     "node": "^16.14.0",
-    "npm": "^s8.1.4"
+    "npm": "^8.1.4"
   },
   "type": "module",
   "scripts": {
