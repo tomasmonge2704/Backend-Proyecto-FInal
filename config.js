@@ -16,7 +16,7 @@ export default {
     DB:"mongo"
     //mongo o firebase
     ,
-    CLUSTER:"on"
+    CLUSTER:"no"
     //on
     ,telefono:"+5491167843278"
     ,mailAdmin:"tomasmongevidal@hotmail.com"
